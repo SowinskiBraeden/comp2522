@@ -138,11 +138,31 @@ public class Creature {
         }
     }
 
+    /**
+     * getAgeYears calculates the age years
+     * from Date.MAX_YEAR which is current year
+     *
+     * @return age in years
+     */
     protected int getAgeYears() {
-        return 0;
+        return Date.MAX_YEAR - this.dateOfBirth.getYear();
     }
 
+    /**
+     * getDetails of the creature
+     *
+     * @return details of the creature.
+     */
     protected String getDetails() {
-        return "";
+        return "Name: " + this.name;
+    }
+
+    /**
+     * getName of creature
+     *
+     * @return name of the creature
+     */
+    protected String getName() {
+        return this.name;
     }
 }

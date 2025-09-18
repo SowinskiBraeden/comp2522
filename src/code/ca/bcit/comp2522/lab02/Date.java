@@ -10,9 +10,10 @@ package ca.bcit.comp2522.lab02;
  * @version 1.0.0
  */
 public final class Date {
+    public static final int MAX_YEAR = 2025;
+
     // Domain of dates
     private static final int MIN_YEAR = 1800;
-    private static final int MAX_YEAR = 2025;
     private static final int MIN_DAY = 1;
     private static final int CURRENT_DAY = 15;
     private static final int CURRENT_MONTH = 9;
