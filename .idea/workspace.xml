@@ -6,11 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="4481728b-524b-48ee-9d70-e414a15f05bd" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/code/ca/bcit/comp2522/lab02/Creature.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/code/ca/bcit/comp2522/lab02/Creature.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/code/ca/bcit/comp2522/lab02/DamageException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/code/ca/bcit/comp2522/lab02/DamageException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/code/ca/bcit/comp2522/lab02/Date.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/code/ca/bcit/comp2522/lab02/Date.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/code/ca/bcit/comp2522/lab02/Dragon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/code/ca/bcit/comp2522/lab02/Dragon.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/code/ca/bcit/comp2522/lab02/HealingException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/code/ca/bcit/comp2522/lab02/HealingException.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,30 +34,51 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/flami/Projects/comp2522&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/home/flami/Projects/comp2522",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="ca.bcit.comp2522.lab02" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ca.bcit.comp2522.lab03.Main" />
+      <module name="comp2522" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ca.bcit.comp2522.lab03.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -86,6 +102,11 @@
       <workItem from="1757986074841" duration="318000" />
       <workItem from="1758045661655" duration="660000" />
       <workItem from="1758156443615" duration="6374000" />
+      <workItem from="1758221692281" duration="40000" />
+      <workItem from="1758221863793" duration="810000" />
+      <workItem from="1758254368145" duration="997000" />
+      <workItem from="1758294307794" duration="4368000" />
+      <workItem from="1758342126924" duration="1015000" />
     </task>
     <servers />
   </component>
