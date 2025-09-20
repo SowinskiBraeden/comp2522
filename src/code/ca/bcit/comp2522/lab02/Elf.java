@@ -38,7 +38,7 @@ public class Elf extends Creature {
      * @param health      int
      * @param mana        int
      */
-    Elf(
+    public Elf(
         final String name,
         final Date   dateOfBirth,
         final int    health,
@@ -57,8 +57,17 @@ public class Elf extends Creature {
      * @return details of elf
      */
     @Override
-    protected String getDetails() {
-        return "Name: " + this.getName() + " Mana: " + this.mana;
+    public String getDetails() {
+        StringBuilder builder;
+        builder = new StringBuilder();
+        builder.append("Is alive: " + this.isAlive());
+        builder.append(" Name: " + this.getName());
+        builder.append(" Date of birth: " + (this.getDateOfBirth()).getYyyyMmDd());
+        builder.append(" Age: " + this.getAgeYears());
+        builder.append(" Health: " + this.getHealth());
+        builder.append(" Mana: " + this.mana);
+
+        return builder.toString();
     }
 
     /**
@@ -68,16 +77,21 @@ public class Elf extends Creature {
      * @param target Creature to deal damage to
      * @throws LowManaException if mana value is too low
      */
-    protected void castSpell(final Creature target)
-        throws LowManaException
+    public void castSpell(final Creature target)
+        throws LowManaException, RuntimeException
     {
-        if (this.mana < MANA_USAGE) {
-            throw new LowManaException("Not enough mana to cast spell");
+        if(!this.isAlive()){
+            throw new RuntimeException("The elf is not alive.");
         }
+        else{
+            if (this.mana < MANA_USAGE) {
+                throw new LowManaException("Not enough mana to cast spell");
+            }
 
-        this.mana -= MANA_USAGE;
+            this.mana -= MANA_USAGE;
 
-        target.takeDamage(MANA_DAMAGE);
+            target.takeDamage(MANA_DAMAGE);
+        }
     }
 
     /**

@@ -40,7 +40,7 @@ public class Orc extends Creature {
      * @param health      int
      * @param rage        int
      */
-    Orc(
+    public Orc(
         final String name,
         final Date   dateOfBirth,
         final int    health,
@@ -59,8 +59,17 @@ public class Orc extends Creature {
      * @return details of orc
      */
     @Override
-    protected String getDetails() {
-        return "Name: " + this.getName() + " Rage: " + this.rage;
+    public String getDetails() {
+        StringBuilder builder;
+        builder = new StringBuilder();
+        builder.append("Is alive: " + this.isAlive());
+        builder.append(" Name: " + this.getName());
+        builder.append(" Date of birth: " + (this.getDateOfBirth()).getYyyyMmDd());
+        builder.append(" Age: " + this.getAgeYears());
+        builder.append(" Health: " + this.getHealth());
+        builder.append(" Rage: " + this.rage);
+
+        return builder.toString();
     }
 
     /**
@@ -71,21 +80,30 @@ public class Orc extends Creature {
      * @param target Creature to deal damage to
      * @throws LowRageException if rage value is too low
      */
-    protected void bezerk(final Creature target)
-        throws LowRageException
+    public void berserk(final Creature target)
+        throws LowRageException, RuntimeException
     {
-        this.rage += RAGE_INCREMENT;
+        if(!this.isAlive()){
+            throw new RuntimeException("The orc is not alive.");
+        }
+        else{
 
-        if (this.rage > MAX_RAGE_VALUE) {
-            this.rage = MAX_RAGE_VALUE;
+            this.rage += RAGE_INCREMENT;
+
+            if (this.rage > MAX_RAGE_VALUE) {
+                this.rage = MAX_RAGE_VALUE;
+            }
+
+            if (rage < RAGE_INCREMENT) {
+                throw new LowRageException("Rage too low");
+            } else if (this.rage > DAMAGE_THRESHOLD) {
+                target.takeDamage(DAMAGE * DOUBLE);
+            } else {
+                target.takeDamage(DOUBLE);
+            }
+
         }
 
-        if (rage < RAGE_INCREMENT) {
-            throw new LowRageException("Rage too low");
-        } else if (this.rage > DAMAGE_THRESHOLD) {
-            target.takeDamage(DAMAGE * DOUBLE);
-        } else {
-            target.takeDamage(DOUBLE);
-        }
     }
+
 }
