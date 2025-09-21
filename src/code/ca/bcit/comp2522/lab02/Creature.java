@@ -107,16 +107,15 @@ public class Creature {
         if (!this.isAlive()){
             throw new RuntimeException("The creature is not alive.");
         }
-        else{
-            if (damage < NO_HEALTH) {
-                throw new DamageException("Damage cannot be negative");
-            }
 
-            this.health -= damage;
+        if (damage < NO_HEALTH) {
+            throw new DamageException("Damage cannot be negative");
+        }
 
-            if (this.health < NO_HEALTH) {
-                this.health = NO_HEALTH;
-            }
+        this.health -= damage;
+
+        if (this.health < NO_HEALTH) {
+            this.health = NO_HEALTH;
         }
     }
 

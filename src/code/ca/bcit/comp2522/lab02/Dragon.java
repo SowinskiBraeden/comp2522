@@ -83,10 +83,9 @@ public class Dragon extends Creature {
         if (!this.isAlive()) {
             throw new RuntimeException("The dragon is not alive.");
         }
-        else {
-            if(firePower < FIRE_POWER_USAGE) {
-                throw new LowFirePowerException("Fire power too low");
-            }
+
+        if(firePower < FIRE_POWER_USAGE) {
+            throw new LowFirePowerException("Fire power too low");
         }
 
         this.firePower -= FIRE_POWER_USAGE;

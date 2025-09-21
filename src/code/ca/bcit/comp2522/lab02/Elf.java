@@ -83,15 +83,15 @@ public class Elf extends Creature {
         if(!this.isAlive()){
             throw new RuntimeException("The elf is not alive.");
         }
-        else{
-            if (this.mana < MANA_USAGE) {
+
+        if (this.mana < MANA_USAGE) {
                 throw new LowManaException("Not enough mana to cast spell");
             }
 
-            this.mana -= MANA_USAGE;
+        this.mana -= MANA_USAGE;
 
-            target.takeDamage(MANA_DAMAGE);
-        }
+        target.takeDamage(MANA_DAMAGE);
+
     }
 
     /**

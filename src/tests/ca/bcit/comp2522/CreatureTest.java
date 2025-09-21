@@ -34,24 +34,24 @@ public class CreatureTest {
             elfBirthDate =    new Date(1900, 11, 5);
             orcBirthDate =    new Date(500, 5, 3);
 
-        creatureDragon = new Dragon("Sparky", dragonBirthDate, 5, 60);
-        creatureElf =    new Elf("Ben", elfBirthDate, 10, 15);
-        creatureOrc =    new Orc("Shobob", orcBirthDate, 12, 3);
+            creatureDragon = new Dragon("Sparky", dragonBirthDate, 5, 60);
+            creatureElf =    new Elf("Ben", elfBirthDate, 10, 15);
+            creatureOrc =    new Orc("Shobob", orcBirthDate, 12, 3);
 
-        final Dragon dragon = (Dragon)creatureDragon;
-        final Elf elf = (Elf)creatureElf;
-        final Orc orc = (Orc)creatureOrc;
-        
-        
-        
-        dragon.printDetails();
-        if (dragon instanceof Creature) System.out.println("This creature is a Dragon.");
-        elf.printDetails();
-        if (elf instanceof Creature) System.out.println("This creature is an Elf.");
-        orc.printDetails();
-        if (orc instanceof Creature) System.out.println("This creature is an Orc.");
+            final Dragon dragon = (Dragon)creatureDragon;
+            final Elf elf = (Elf)creatureElf;
+            final Orc orc = (Orc)creatureOrc;
 
-            // Fight sequence — all guarded by friendly exception handling
+
+
+            dragon.printDetails();
+            if (dragon instanceof Creature) System.out.println("This creature is a Dragon.");
+            elf.printDetails();
+            if (elf instanceof Creature) System.out.println("This creature is an Elf.");
+            orc.printDetails();
+            if (orc instanceof Creature) System.out.println("This creature is an Orc.");
+
+
             try {
 
                 System.out.println("- Dragon breathed fire on the Elf");

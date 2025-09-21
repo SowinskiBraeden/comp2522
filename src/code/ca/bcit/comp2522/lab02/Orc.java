@@ -86,24 +86,21 @@ public class Orc extends Creature {
         if(!this.isAlive()){
             throw new RuntimeException("The orc is not alive.");
         }
-        else{
 
-            this.rage += RAGE_INCREMENT;
+        this.rage += RAGE_INCREMENT;
 
-            if (this.rage > MAX_RAGE_VALUE) {
-                this.rage = MAX_RAGE_VALUE;
-            }
-
-            if (rage < RAGE_INCREMENT) {
-                throw new LowRageException("Rage too low");
-            } else if (this.rage > DAMAGE_THRESHOLD) {
-                target.takeDamage(DAMAGE * DOUBLE);
-            } else {
-                target.takeDamage(DOUBLE);
-            }
-
+        if (this.rage > MAX_RAGE_VALUE) {
+            this.rage = MAX_RAGE_VALUE;
         }
 
-    }
+        if (rage < RAGE_INCREMENT) {
+            throw new LowRageException("Rage too low");
+        } else if (this.rage > DAMAGE_THRESHOLD) {
+            target.takeDamage(DAMAGE * DOUBLE);
+        } else {
+            target.takeDamage(DAMAGE);
+        }
+
+        }
 
 }
