@@ -1,6 +1,17 @@
 package ca.bcit.comp2522.lab03;
 
+/**
+ * Main class to test IDevice classes, and abstract concepts.
+ *
+ * @author Braeden Sowinski
+ * @version 1.0.0
+ */
 public class Main {
+
+    /**
+     * main program entry
+     * @param args from user input
+     */
     public static void main(final String[] args) {
         // Create IPod objects
         final IPod ipod1;
