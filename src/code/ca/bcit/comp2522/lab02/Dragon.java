@@ -8,6 +8,7 @@ package ca.bcit.comp2522.lab02;
  * @version 1.0.0
  */
 public class Dragon extends Creature {
+
     private static final int MAX_FIRE_POWER = 100;
     private static final int MIN_FIRE_POWER = 0;
     private static final int FIRE_POWER_USAGE = 10;
@@ -22,9 +23,9 @@ public class Dragon extends Creature {
      * @param firePower to verify
      * @throws IllegalArgumentException if firePower is outside valid range
      */
-    private static void validateFirePower(int firePower)
-        throws IllegalArgumentException {
-
+    private static void validateFirePower(final int firePower)
+        throws IllegalArgumentException
+    {
         if (firePower < MIN_FIRE_POWER || firePower > MAX_FIRE_POWER) {
             throw new IllegalArgumentException("Fire power is outside of valid range.");
         }
@@ -59,14 +60,15 @@ public class Dragon extends Creature {
      */
     @Override
     public String getDetails() {
-        StringBuilder builder;
+
+        final StringBuilder builder;
         builder = new StringBuilder();
-        builder.append("Is alive: " + this.isAlive());
-        builder.append(" Name: " + this.getName());
+        builder.append("Is alive: "       + this.isAlive());
+        builder.append(" Name: "          + this.getName());
         builder.append(" Date of birth: " + (this.getDateOfBirth()).getYyyyMmDd());
-        builder.append(" Age: " + this.getAgeYears());
-        builder.append(" Health: " + this.getHealth());
-        builder.append(" FirePower: " + this.firePower);
+        builder.append(" Age: "           + this.getAgeYears());
+        builder.append(" Health: "        + this.getHealth());
+        builder.append(" FirePower: "     + this.firePower);
 
 
 

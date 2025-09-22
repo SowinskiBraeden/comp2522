@@ -8,7 +8,7 @@ package ca.bcit.comp2522.lab02;
  * @version 1.0.0
  */
 public class HealingException extends RuntimeException {
-    public HealingException(String message) {
+    public HealingException(final String message) {
         super(message);
     }
 }
