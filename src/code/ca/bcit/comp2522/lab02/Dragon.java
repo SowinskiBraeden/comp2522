@@ -43,8 +43,11 @@ public class Dragon extends Creature {
         final Date   dateOfBirth,
         final int    health,
         final int    firePower
-    ) {
+    )
+    {
         super(name, dateOfBirth, health);
+
+        validateFirePower(firePower);
 
         this.firePower = firePower;
     }
@@ -70,12 +73,14 @@ public class Dragon extends Creature {
         return builder.toString();
 
     }
+
     /**
      * breathFire onto Creatures to deal damage
      * and reduces current firePower value
      *
      * @param target Creature to deal damage to
      * @throws LowFirePowerException if not enough firePower
+     * @throws RuntimeException if the dragon is not alive to accomplish the action
      */
     public void breatheFire(final Creature target)
         throws LowFirePowerException, RuntimeException {

@@ -17,7 +17,7 @@ public class Orc extends Creature {
 
     private int rage;
 
-    /*
+    /**
      * validateRageValue ensures a given value is within
      * the correct rage range
      *
@@ -73,12 +73,13 @@ public class Orc extends Creature {
     }
 
     /**
-     * bezerk goes the orc when he is really mad.
+     * berserk goes the orc when he is really mad.
      * dealing damage to target Creatures with the
      * potential for double damage.
      *
      * @param target Creature to deal damage to
      * @throws LowRageException if rage value is too low
+     * @throws RuntimeException if the Orc is not alive to accomplish the action
      */
     public void berserk(final Creature target)
         throws LowRageException, RuntimeException

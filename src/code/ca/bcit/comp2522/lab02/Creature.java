@@ -2,9 +2,9 @@ package ca.bcit.comp2522.lab02;
 
 /**
  * Creature contains simple information regarding
- * a creature such as its health and name.
+ * a creature such as its health, name and date of birth.
  *
- * @author Braeden Sowinski
+ * @author Braeden Sowinski, Nicolas Agostini, Trishaan Shetty
  * @version 1.0.0
  */
 public class Creature {
@@ -17,8 +17,8 @@ public class Creature {
 
     private int health;
 
-    /*
-     * validateName ensures input name is not empty.
+    /**
+     * validateName ensures input name is not null or empty.
      *
      * @param name input
      * @throws IllegalArgumentException
@@ -26,12 +26,12 @@ public class Creature {
     private static void validateName(final String name)
         throws IllegalArgumentException
     {
-        if (name.isEmpty()) {
+        if (name == null || name.isEmpty()) {
             throw new IllegalArgumentException("Name cannot be null or empty");
         }
     }
 
-    /*
+    /**
      * validateHealth ensures input health is within valid range
      * of MAX_HEALTH and MIN_HEALTH
      *
@@ -46,7 +46,7 @@ public class Creature {
         }
     }
 
-    /*
+    /**
      * validateDateOfBirth ensures the date of birth
      * is not in the future.
      *
@@ -100,6 +100,7 @@ public class Creature {
      *
      * @param damage to be dealt
      * @throws DamageException if damage is negative
+     * @throws RuntimeException if the creature is not alive
      */
     public void takeDamage(final int damage)
         throws DamageException, RuntimeException
@@ -187,8 +188,16 @@ public class Creature {
     public void printDetails() {
         System.out.println(getDetails());
     }
-
+    /**
+     * Prints the details of the creature.
+     * @return health value of the creature
+     */
     public int getHealth() { return this.health;}
+
+    /**
+     * Returns the date of birth of the creature.
+     * @return Date of Birth of the creature.
+     */
     public Date getDateOfBirth() { return this.dateOfBirth;}
 
 }

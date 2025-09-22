@@ -2,7 +2,7 @@ package ca.bcit.comp2522.lab02;
 
 /**
  * Elf extends Creature and
- * holds a mana value? Never heard of that
+ * holds a mana value
  *
  * @author Braeden Sowinski
  * @version 1.0.0
@@ -15,7 +15,7 @@ public class Elf extends Creature {
 
     private int mana;
 
-    /*
+    /**
      * validateManaValue ensures a given value is within
      * the correct mana range
      *
@@ -76,6 +76,7 @@ public class Elf extends Creature {
      *
      * @param target Creature to deal damage to
      * @throws LowManaException if mana value is too low
+     * @throws RuntimeException if the Elf is not alive to accomplish the action
      */
     public void castSpell(final Creature target)
         throws LowManaException, RuntimeException
