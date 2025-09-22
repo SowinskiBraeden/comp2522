@@ -5,6 +5,8 @@ package ca.bcit.comp2522.lab02;
  * holds a firePower value.
  *
  * @author Braeden Sowinski
+ * @author Nicolas Agostini
+ * @author Trishaan Shetty
  * @version 1.0.0
  */
 public class Dragon extends Creature
@@ -63,15 +65,16 @@ public class Dragon extends Creature
     public String getDetails()
     {
 
+
         final StringBuilder builder;
         builder = new StringBuilder();
+
         builder.append("Is alive: "       + this.isAlive());
         builder.append(" Name: "          + this.getName());
         builder.append(" Date of birth: " + (this.getDateOfBirth()).getYyyyMmDd());
         builder.append(" Age: "           + this.getAgeYears());
         builder.append(" Health: "        + this.getHealth());
         builder.append(" FirePower: "     + this.firePower);
-
 
 
         return builder.toString();
@@ -112,10 +115,12 @@ public class Dragon extends Creature
      */
     protected void restoreFirePower(final int amount)
     {
+
         this.firePower += amount;
 
         if (this.firePower > MAX_FIRE_POWER) {
             this.firePower = MAX_FIRE_POWER;
         }
+
     }
 }
