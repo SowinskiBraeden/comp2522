@@ -1,13 +1,4 @@
-package ca.bcit.comp2522;
-
-import ca.bcit.comp2522.lab02.Creature;
-import ca.bcit.comp2522.lab02.Date;
-import ca.bcit.comp2522.lab02.Dragon;
-import ca.bcit.comp2522.lab02.Elf;
-import ca.bcit.comp2522.lab02.Orc;
-import ca.bcit.comp2522.lab02.LowFirePowerException;
-import ca.bcit.comp2522.lab02.LowManaException;
-import ca.bcit.comp2522.lab02.LowRageException;
+package ca.bcit.comp2522.lab02;
 
 /**
  * A test driver for the Creature class and its subclasses.
