@@ -5,9 +5,12 @@ package ca.bcit.comp2522.lab03;
  * features.
  *
  * @author Braeden Sowinski
+ * @author Nicolas Agostini
+ * @author Trishaan Shetty
  * @version 1.0.0
  */
 public class IPhone16 extends IPhone {
+
     private static final int IPHONE_HASH_WITH_HIGH_RES = 103;
 
     final boolean highResolutionCamera;
@@ -28,6 +31,8 @@ public class IPhone16 extends IPhone {
     ) {
         super(remainingPhonePlanMinutes, carrier);
 
+        // TODO: validate memoryGB input?
+
         this.highResolutionCamera = highResolutionCamera;
         this.memoryGB = memoryGB;
     }
@@ -46,6 +51,7 @@ public class IPhone16 extends IPhone {
      */
     @Override
     public String toString() {
+
         final StringBuilder builder;
 
         builder = new StringBuilder();
@@ -56,6 +62,7 @@ public class IPhone16 extends IPhone {
         builder.append(this.memoryGB);
 
         return builder.toString();
+
     }
 
     /**
@@ -67,6 +74,7 @@ public class IPhone16 extends IPhone {
      */
     @Override
     public boolean equals(final Object o) {
+
         // Ensure object exists
         if (o == null) {
             return false;
@@ -84,10 +92,11 @@ public class IPhone16 extends IPhone {
         final boolean matchingMinutes;
         final boolean matchingCameraResolution;
 
-        matchingMinutes = otherIPhone.getRemainingPhonePlanMinutes() == this.getRemainingPhonePlanMinutes();
+        matchingMinutes          = otherIPhone.getRemainingPhonePlanMinutes() == this.getRemainingPhonePlanMinutes();
         matchingCameraResolution = this.highResolutionCamera && otherIPhone.getHighResolutionCamera();
 
         return matchingMinutes && matchingCameraResolution;
+
     }
 
     /**
@@ -96,6 +105,7 @@ public class IPhone16 extends IPhone {
      */
     @Override
     public int hashCode() {
+
         int hash;
 
         hash = super.hashCode();
@@ -105,5 +115,6 @@ public class IPhone16 extends IPhone {
         }
 
         return hash;
+
     }
 }

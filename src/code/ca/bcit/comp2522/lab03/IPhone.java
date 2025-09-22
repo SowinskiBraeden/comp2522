@@ -5,9 +5,12 @@ package ca.bcit.comp2522.lab03;
  * how many minutes remain on the phone plan.
  *
  * @author Braeden Sowinski
+ * @author Nicolas Agostini
+ * @author Trishaan Shetty
  * @version 1.0.0
  */
 public class IPhone extends IDevice {
+
     private static final int IPHONE_HASH = 11;
     private static final int IPHONE_HASH_CODE = 101;
 
@@ -25,6 +28,7 @@ public class IPhone extends IDevice {
     ) {
         super("talking");
 
+        // TODO: validate String inputs, possibly other inputs too
         this.remainingPhonePlanMinutes = remainingPhonePlanMinutes;
         this.carrier = carrier;
     }
@@ -42,6 +46,7 @@ public class IPhone extends IDevice {
      * phone plan minutes
      */
     public void printDetails() {
+
         final StringBuilder details;
 
         details = new StringBuilder();
@@ -52,6 +57,7 @@ public class IPhone extends IDevice {
         details.append(")");
 
         System.out.println(details.toString());
+
     }
 
     /**
@@ -60,9 +66,10 @@ public class IPhone extends IDevice {
      */
     @Override
     public String toString() {
+
+        // TODO: convert to StringBuilder, refer to IPad
         return super.toString() + " " + this.remainingPhonePlanMinutes + " " + this.carrier;
     }
-
 
     /**
      * equals check if a given IPhone has the same remaining
@@ -72,6 +79,7 @@ public class IPhone extends IDevice {
      */
     @Override
     public boolean equals(final Object o) {
+
         // Ensure object exists
         if (o == null) {
             return false;
@@ -87,6 +95,7 @@ public class IPhone extends IDevice {
         otherIPhone = (IPhone) o;
 
         return otherIPhone.getRemainingPhonePlanMinutes() == this.remainingPhonePlanMinutes;
+
     }
 
     /**
@@ -95,8 +104,12 @@ public class IPhone extends IDevice {
      */
     @Override
     public int hashCode() {
+
         int hash;
+
         hash = IPHONE_HASH_CODE * IPHONE_HASH * (int) this.remainingPhonePlanMinutes;
+
         return hash;
+
     }
 }

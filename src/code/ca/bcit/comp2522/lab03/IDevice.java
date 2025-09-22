@@ -5,9 +5,12 @@ package ca.bcit.comp2522.lab03;
  * devices and common functionality.
  *
  * @author Braeden Sowinski
+ * @author Nicolas Agostini
+ * @author Trishaan Shetty
  * @version 1.0.0
  */
 public abstract class IDevice {
+
     private final String purpose;
 
     /**
@@ -15,6 +18,8 @@ public abstract class IDevice {
      * @param purpose of IDevice
      */
     public IDevice(final String purpose) {
+
+        // TODO: validate String inputs
         this.purpose = purpose;
     }
 

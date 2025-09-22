@@ -5,9 +5,12 @@ package ca.bcit.comp2522.lab03;
  * such as operating system version, and if it has a case.
  *
  * @author Braeden Sowinski
+ * @author Nicolas Agostini
+ * @author Trishaan Shetty
  * @version 1.0.0
  */
 public class IPad extends IDevice {
+
     private final boolean hasCase;
     private final String OSVersion;
 
@@ -22,6 +25,7 @@ public class IPad extends IDevice {
     ) {
         super("learning");
 
+        // TODO: validate String inputs
         this.hasCase = hasCase;
         this.OSVersion = OSVersion;
     }
@@ -39,6 +43,7 @@ public class IPad extends IDevice {
      * and which operating system version it is running
      */
     public void printDetails() {
+
         final StringBuilder details;
 
         details = new StringBuilder();
@@ -49,6 +54,7 @@ public class IPad extends IDevice {
         details.append(this.OSVersion);
 
         System.out.println(details.toString());
+
     }
 
     /**
@@ -57,7 +63,19 @@ public class IPad extends IDevice {
      */
     @Override
     public String toString() {
-        return super.toString() + " " + this.hasCase + " " + this.OSVersion;
+
+        final StringBuilder details;
+
+        details = new StringBuilder();
+
+        details.append(super.toString());
+        details.append(" ");
+        details.append(this.hasCase);
+        details.append(" ");
+        details.append(this.OSVersion);
+
+        return details.toString();
+
     }
 
     /**
@@ -68,6 +86,7 @@ public class IPad extends IDevice {
      */
     @Override
     public boolean equals(final Object o) {
+
         // Ensure object exists
         if (o == null) {
             return false;
@@ -83,6 +102,7 @@ public class IPad extends IDevice {
         otherIPad = (IPad) o;
 
         return otherIPad.getOSVersion().equals(this.OSVersion);
+
     }
 
     /**

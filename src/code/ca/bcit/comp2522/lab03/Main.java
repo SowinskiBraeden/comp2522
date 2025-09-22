@@ -4,6 +4,8 @@ package ca.bcit.comp2522.lab03;
  * Main class to test IDevice classes, and abstract concepts.
  *
  * @author Braeden Sowinski
+ * @author Nicolas Agostini
+ * @author Trishaan Shetty
  * @version 1.0.0
  */
 public class Main {

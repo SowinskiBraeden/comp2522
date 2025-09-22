@@ -5,9 +5,12 @@ package ca.bcit.comp2522.lab03;
  * volume in decibels.
  *
  * @author Braeden Sowinski
+ * @author Nicolas Agostini
+ * @author Trishaan Shetty
  * @version 1.0.0
  */
 public class IPod extends IDevice {
+
     private static final int IPOD_HASH = 7;
     private static final int IPOD_HASH_CODE = 97;
 
@@ -25,6 +28,8 @@ public class IPod extends IDevice {
     ) {
         super("music");
 
+        // TODO: validate numberOfSongs input
+
         this.numberOfSongs = numberOfSongs;
         this.maxVolumeDecibels = maxVolumeDecibels;
     }
@@ -34,6 +39,7 @@ public class IPod extends IDevice {
      * and max volume in decibels.
      */
     public void printDetails() {
+
         final StringBuilder details;
 
         details = new StringBuilder();
@@ -44,6 +50,7 @@ public class IPod extends IDevice {
         details.append(" dB.");
 
         System.out.println(details.toString());
+
     }
 
     /**
@@ -60,6 +67,8 @@ public class IPod extends IDevice {
      */
     @Override
     public String toString() {
+
+        // TODO: change this to StringBuilder, refer to IPad
         return super.toString() + " " +  this.numberOfSongs + " " + this.maxVolumeDecibels;
     }
 
@@ -71,6 +80,7 @@ public class IPod extends IDevice {
      */
     @Override
     public boolean equals(final Object o) {
+
         // Ensure object exists
         if (o == null) {
             return false;
@@ -86,6 +96,7 @@ public class IPod extends IDevice {
         otherIPod = (IPod) o;
 
         return otherIPod.getNumberOfSongs() == this.numberOfSongs;
+
     }
 
     /**
@@ -94,8 +105,12 @@ public class IPod extends IDevice {
      */
     @Override
     public int hashCode() {
+
         int hash;
+
         hash = IPOD_HASH_CODE * IPOD_HASH + this.numberOfSongs;
+
         return hash;
+
     }
 }
