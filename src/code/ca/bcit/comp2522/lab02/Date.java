@@ -13,7 +13,7 @@ public final class Date {
     public static final int MAX_YEAR = 2025;
 
     // Domain of dates
-    private static final int MIN_YEAR = 1800;
+    private static final int MIN_YEAR = 0;
     private static final int MIN_DAY = 1;
     private static final int CURRENT_DAY = 15;
     private static final int CURRENT_MONTH = 9;
@@ -144,8 +144,9 @@ public final class Date {
         }
     }
 
-    /*
+    /**
         validateYear checks input year is in valid range
+        @param year to be validated
      */
     private static void validateYear(final int year)
             throws IllegalArgumentException
@@ -156,8 +157,9 @@ public final class Date {
         }
     }
 
-    /*
+    /**
         validateMonth checks input month is in valid range
+        @param month to be validated
      */
     private static void validateMonth(final int month)
             throws IllegalArgumentException
@@ -168,9 +170,12 @@ public final class Date {
         }
     }
 
-    /*
-        validateDay ensures the day given is less than the max day
-        calculated by daysInMonth and greater than the MIN_DAY
+    /**
+     * validateDay ensures the day given is less than the max day
+     * calculated by daysInMonth and greater than the MIN_DAY
+     * @param day
+     * @param month
+     * @param year
      */
     private static void validateDay(
             final int day,
@@ -385,6 +390,11 @@ public final class Date {
         return day;
     }
 
+    /**
+     * isInFuture validates if the Date instance is from a date greater than
+     * MAX_YEAR, which corresponds to the current year
+     * @return if the date is in the future
+     */
     public boolean isInFuture() {
 
         if (this.year > MAX_YEAR) {
