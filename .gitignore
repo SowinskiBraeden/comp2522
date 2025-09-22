@@ -1,3 +1,5 @@
 # Compiled files
 /out/*
 *.class
+
+.idea/*

@@ -22,8 +22,9 @@ public class Dragon extends Creature {
      * @param firePower to verify
      * @throws IllegalArgumentException if firePower is outside valid range
      */
-    private static void validateFirePower(int firePower)
-        throws IllegalArgumentException {
+    private static void validateFirePower(final int firePower)
+        throws IllegalArgumentException
+    {
 
         if (firePower < MIN_FIRE_POWER || firePower > MAX_FIRE_POWER) {
             throw new IllegalArgumentException("Fire power is outside of valid range.");
