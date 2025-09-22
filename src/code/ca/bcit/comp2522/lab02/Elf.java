@@ -5,9 +5,12 @@ package ca.bcit.comp2522.lab02;
  * holds a mana value
  *
  * @author Braeden Sowinski
+ * @author Nicolas Agostini
+ * @author Trishaan Shetty
  * @version 1.0.0
  */
 public class Elf extends Creature {
+
     private static final int MIN_MANA_VALUE = 0;
     private static final int MAX_MANA_VALUE = 50;
     private static final int MANA_DAMAGE = 10;
@@ -58,14 +61,17 @@ public class Elf extends Creature {
      */
     @Override
     public String getDetails() {
-        StringBuilder builder;
+
+        final StringBuilder builder;
+
         builder = new StringBuilder();
-        builder.append("Is alive: " + this.isAlive());
-        builder.append(" Name: " + this.getName());
+
+        builder.append("Is alive: "       + this.isAlive());
+        builder.append(" Name: "          + this.getName());
         builder.append(" Date of birth: " + (this.getDateOfBirth()).getYyyyMmDd());
-        builder.append(" Age: " + this.getAgeYears());
-        builder.append(" Health: " + this.getHealth());
-        builder.append(" Mana: " + this.mana);
+        builder.append(" Age: "           + this.getAgeYears());
+        builder.append(" Health: "        + this.getHealth());
+        builder.append(" Mana: "          + this.mana);
 
         return builder.toString();
     }
@@ -102,10 +108,12 @@ public class Elf extends Creature {
      * @param amount to increase mana
      */
     protected void restoreMana(final int amount) {
+
         this.mana += amount;
 
         if (this.mana > MAX_MANA_VALUE) {
             this.mana = MAX_MANA_VALUE;
         }
+
     }
 }

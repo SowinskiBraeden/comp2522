@@ -5,9 +5,12 @@ package ca.bcit.comp2522.lab02;
  * holds a firePower value.
  *
  * @author Braeden Sowinski
+ * @author Nicolas Agostini
+ * @author Trishaan Shetty
  * @version 1.0.0
  */
 public class Dragon extends Creature {
+
     private static final int MAX_FIRE_POWER = 100;
     private static final int MIN_FIRE_POWER = 0;
     private static final int FIRE_POWER_USAGE = 10;
@@ -25,7 +28,6 @@ public class Dragon extends Creature {
     private static void validateFirePower(final int firePower)
         throws IllegalArgumentException
     {
-
         if (firePower < MIN_FIRE_POWER || firePower > MAX_FIRE_POWER) {
             throw new IllegalArgumentException("Fire power is outside of valid range.");
         }
@@ -60,16 +62,17 @@ public class Dragon extends Creature {
      */
     @Override
     public String getDetails() {
-        StringBuilder builder;
+
+        final StringBuilder builder;
 
         builder = new StringBuilder();
 
-        builder.append("Is alive: " + this.isAlive());
-        builder.append(" Name: " + this.getName());
+        builder.append("Is alive: "       + this.isAlive());
+        builder.append(" Name: "          + this.getName());
         builder.append(" Date of birth: " + (this.getDateOfBirth()).getYyyyMmDd());
-        builder.append(" Age: " + this.getAgeYears());
-        builder.append(" Health: " + this.getHealth());
-        builder.append(" FirePower: " + this.firePower);
+        builder.append(" Age: "           + this.getAgeYears());
+        builder.append(" Health: "        + this.getHealth());
+        builder.append(" FirePower: "     + this.firePower);
 
         return builder.toString();
 
@@ -84,7 +87,8 @@ public class Dragon extends Creature {
      * @throws RuntimeException if the dragon is not alive to accomplish the action
      */
     public void breatheFire(final Creature target)
-        throws LowFirePowerException, RuntimeException {
+        throws LowFirePowerException, RuntimeException
+    {
 
         if (!this.isAlive()) {
             throw new RuntimeException("The dragon is not alive.");
@@ -107,10 +111,12 @@ public class Dragon extends Creature {
      * @param amount to increase firePower
      */
     protected void restoreFirePower(final int amount) {
+
         this.firePower += amount;
 
         if (this.firePower > MAX_FIRE_POWER) {
             this.firePower = MAX_FIRE_POWER;
         }
+
     }
 }

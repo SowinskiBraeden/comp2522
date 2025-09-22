@@ -5,9 +5,12 @@ package ca.bcit.comp2522.lab02;
  * holds a rage value. Orcs need anger management.
  *
  * @author Braeden Sowinski
+ * @author Nicolas Agostini
+ * @author Trishaan Shetty
  * @version 1.0.0
  */
 public class Orc extends Creature {
+
     private static final int MIN_RAGE_VALUE = 0;
     private static final int MAX_RAGE_VALUE = 30;
     private static final int RAGE_INCREMENT = 5;
@@ -60,14 +63,17 @@ public class Orc extends Creature {
      */
     @Override
     public String getDetails() {
-        StringBuilder builder;
+
+        final StringBuilder builder;
+
         builder = new StringBuilder();
-        builder.append("Is alive: " + this.isAlive());
-        builder.append(" Name: " + this.getName());
+
+        builder.append("Is alive: "       + this.isAlive());
+        builder.append(" Name: "          + this.getName());
         builder.append(" Date of birth: " + (this.getDateOfBirth()).getYyyyMmDd());
-        builder.append(" Age: " + this.getAgeYears());
-        builder.append(" Health: " + this.getHealth());
-        builder.append(" Rage: " + this.rage);
+        builder.append(" Age: "           + this.getAgeYears());
+        builder.append(" Health: "        + this.getHealth());
+        builder.append(" Rage: "          + this.rage);
 
         return builder.toString();
     }
@@ -84,6 +90,7 @@ public class Orc extends Creature {
     public void berserk(final Creature target)
         throws LowRageException, RuntimeException
     {
+
         if(!this.isAlive()){
             throw new RuntimeException("The orc is not alive.");
         }
@@ -102,5 +109,5 @@ public class Orc extends Creature {
             target.takeDamage(DAMAGE);
         }
 
-        }
+    }
 }
