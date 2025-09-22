@@ -17,7 +17,7 @@ public class Orc extends Creature {
 
     private int rage;
 
-    /*
+    /**
      * validateRageValue ensures a given value is within
      * the correct rage range
      *
@@ -40,7 +40,7 @@ public class Orc extends Creature {
      * @param health      int
      * @param rage        int
      */
-    Orc(
+    public Orc(
         final String name,
         final Date   dateOfBirth,
         final int    health,
@@ -59,21 +59,35 @@ public class Orc extends Creature {
      * @return details of orc
      */
     @Override
-    protected String getDetails() {
-        return "Name: " + this.getName() + " Rage: " + this.rage;
+    public String getDetails() {
+        StringBuilder builder;
+        builder = new StringBuilder();
+        builder.append("Is alive: " + this.isAlive());
+        builder.append(" Name: " + this.getName());
+        builder.append(" Date of birth: " + (this.getDateOfBirth()).getYyyyMmDd());
+        builder.append(" Age: " + this.getAgeYears());
+        builder.append(" Health: " + this.getHealth());
+        builder.append(" Rage: " + this.rage);
+
+        return builder.toString();
     }
 
     /**
-     * bezerk goes the orc when he is really mad.
+     * berserk goes the orc when he is really mad.
      * dealing damage to target Creatures with the
      * potential for double damage.
      *
      * @param target Creature to deal damage to
      * @throws LowRageException if rage value is too low
+     * @throws RuntimeException if the Orc is not alive to accomplish the action
      */
-    protected void bezerk(final Creature target)
-        throws LowRageException
+    public void berserk(final Creature target)
+        throws LowRageException, RuntimeException
     {
+        if(!this.isAlive()){
+            throw new RuntimeException("The orc is not alive.");
+        }
+
         this.rage += RAGE_INCREMENT;
 
         if (this.rage > MAX_RAGE_VALUE) {
@@ -85,7 +99,9 @@ public class Orc extends Creature {
         } else if (this.rage > DAMAGE_THRESHOLD) {
             target.takeDamage(DAMAGE * DOUBLE);
         } else {
-            target.takeDamage(DOUBLE);
+            target.takeDamage(DAMAGE);
         }
-    }
+
+        }
+
 }

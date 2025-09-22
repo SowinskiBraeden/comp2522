@@ -39,13 +39,16 @@ public class Dragon extends Creature {
      * @param health      int
      * @param firePower   int
      */
-    Dragon(
+    public Dragon(
         final String name,
         final Date   dateOfBirth,
         final int    health,
         final int    firePower
-    ) {
+    )
+    {
         super(name, dateOfBirth, health);
+
+        validateFirePower(firePower);
 
         this.firePower = firePower;
     }
@@ -56,8 +59,20 @@ public class Dragon extends Creature {
      * @return details of dragon
      */
     @Override
-    protected String getDetails() {
-        return "Name: " + this.getName() + " FirePower: " + this.firePower;
+    public String getDetails() {
+        StringBuilder builder;
+        builder = new StringBuilder();
+        builder.append("Is alive: " + this.isAlive());
+        builder.append(" Name: " + this.getName());
+        builder.append(" Date of birth: " + (this.getDateOfBirth()).getYyyyMmDd());
+        builder.append(" Age: " + this.getAgeYears());
+        builder.append(" Health: " + this.getHealth());
+        builder.append(" FirePower: " + this.firePower);
+
+
+
+        return builder.toString();
+
     }
 
     /**
@@ -66,17 +81,23 @@ public class Dragon extends Creature {
      *
      * @param target Creature to deal damage to
      * @throws LowFirePowerException if not enough firePower
+     * @throws RuntimeException if the dragon is not alive to accomplish the action
      */
-    protected void breatheFire(final Creature target)
-        throws LowFirePowerException
-    {
-        if (firePower > FIRE_POWER_USAGE) {
+    public void breatheFire(final Creature target)
+        throws LowFirePowerException, RuntimeException {
+
+        if (!this.isAlive()) {
+            throw new RuntimeException("The dragon is not alive.");
+        }
+
+        if(firePower < FIRE_POWER_USAGE) {
             throw new LowFirePowerException("Fire power too low");
         }
 
         this.firePower -= FIRE_POWER_USAGE;
 
         target.takeDamage(FIRE_POWER_DAMAGE);
+
     }
 
     /**
