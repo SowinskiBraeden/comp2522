@@ -9,7 +9,8 @@ package ca.bcit.comp2522.lab02;
  * @author Trishaan Shetty
  * @version 1.0.0
  */
-public class Creature {
+public class Creature
+{
 
     private static final int MIN_HEALTH = 1;
     private static final int MAX_HEALTH = 100;
@@ -162,7 +163,8 @@ public class Creature {
      *
      * @return details of the creature.
      */
-    public String getDetails() {
+    public String getDetails()
+    {
         StringBuilder builder;
 
         builder = new StringBuilder();

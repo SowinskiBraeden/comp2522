@@ -9,12 +9,9 @@ package ca.bcit.comp2522.lab02;
  * @author Trishaan Shetty
  * @version 1.0.0
  */
-public class LowFirePowerException extends Exception {
+public class LowFirePowerException extends Exception
+{
 
-    /**
-     * LowFirePowerException constructor
-     * @param message LowFirePowerException error message
-     */
     public LowFirePowerException(final String message) {
         super(message);
     }

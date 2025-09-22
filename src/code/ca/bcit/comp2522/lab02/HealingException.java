@@ -9,12 +9,8 @@ package ca.bcit.comp2522.lab02;
  * @author Trishaan Shetty
  * @version 1.0.0
  */
-public class HealingException extends RuntimeException {
-
-    /**
-     * HealingException constructor
-     * @param message HealingException error message
-     */
+public class HealingException extends RuntimeException
+{
     public HealingException(final String message) {
         super(message);
     }

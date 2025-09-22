@@ -9,7 +9,8 @@ package ca.bcit.comp2522.lab02;
  * @author Trishaan Shetty
  * @version 1.0.0
  */
-public class Dragon extends Creature {
+public class Dragon extends Creature
+{
 
     private static final int MAX_FIRE_POWER = 100;
     private static final int MIN_FIRE_POWER = 0;
@@ -61,10 +62,11 @@ public class Dragon extends Creature {
      * @return details of dragon
      */
     @Override
-    public String getDetails() {
+    public String getDetails()
+    {
+
 
         final StringBuilder builder;
-
         builder = new StringBuilder();
 
         builder.append("Is alive: "       + this.isAlive());
@@ -73,6 +75,7 @@ public class Dragon extends Creature {
         builder.append(" Age: "           + this.getAgeYears());
         builder.append(" Health: "        + this.getHealth());
         builder.append(" FirePower: "     + this.firePower);
+
 
         return builder.toString();
 
@@ -110,7 +113,8 @@ public class Dragon extends Creature {
      *
      * @param amount to increase firePower
      */
-    protected void restoreFirePower(final int amount) {
+    protected void restoreFirePower(final int amount)
+    {
 
         this.firePower += amount;
 
