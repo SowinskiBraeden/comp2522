@@ -61,15 +61,15 @@ public class Dragon extends Creature {
     @Override
     public String getDetails() {
         StringBuilder builder;
+
         builder = new StringBuilder();
+
         builder.append("Is alive: " + this.isAlive());
         builder.append(" Name: " + this.getName());
         builder.append(" Date of birth: " + (this.getDateOfBirth()).getYyyyMmDd());
         builder.append(" Age: " + this.getAgeYears());
         builder.append(" Health: " + this.getHealth());
         builder.append(" FirePower: " + this.firePower);
-
-
 
         return builder.toString();
 

@@ -160,14 +160,14 @@ public class Creature {
      */
     public String getDetails() {
         StringBuilder builder;
+
         builder = new StringBuilder();
+
         builder.append("Is alive: " + this.isAlive());
         builder.append("Name: " + this.name);
         builder.append("Date of birth: " + this.dateOfBirth);
         builder.append("Age: " + this.getAgeYears());
         builder.append("Health: " + this.health);
-
-
 
         return builder.toString();
 
