@@ -7,7 +7,8 @@ package ca.bcit.comp2522.lab02;
  * @author Braeden Sowinski
  * @version 1.0.0
  */
-public class Dragon extends Creature {
+public class Dragon extends Creature
+{
 
     private static final int MAX_FIRE_POWER = 100;
     private static final int MIN_FIRE_POWER = 0;
@@ -59,7 +60,8 @@ public class Dragon extends Creature {
      * @return details of dragon
      */
     @Override
-    public String getDetails() {
+    public String getDetails()
+    {
 
         final StringBuilder builder;
         builder = new StringBuilder();
@@ -85,7 +87,8 @@ public class Dragon extends Creature {
      * @throws RuntimeException if the dragon is not alive to accomplish the action
      */
     public void breatheFire(final Creature target)
-        throws LowFirePowerException, RuntimeException {
+        throws LowFirePowerException, RuntimeException
+    {
 
         if (!this.isAlive()) {
             throw new RuntimeException("The dragon is not alive.");
@@ -107,7 +110,8 @@ public class Dragon extends Creature {
      *
      * @param amount to increase firePower
      */
-    protected void restoreFirePower(final int amount) {
+    protected void restoreFirePower(final int amount)
+    {
         this.firePower += amount;
 
         if (this.firePower > MAX_FIRE_POWER) {

@@ -8,7 +8,7 @@ package ca.bcit.comp2522.lab02;
  * @version 1.0.0
  */
 public class DamageException extends RuntimeException {
-    public DamageException(String message) {
+    public DamageException(final String message) {
         super(message);
     }
 }

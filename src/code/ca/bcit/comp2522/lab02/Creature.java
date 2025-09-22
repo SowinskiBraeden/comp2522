@@ -7,7 +7,8 @@ package ca.bcit.comp2522.lab02;
  * @author Braeden Sowinski, Nicolas Agostini, Trishaan Shetty
  * @version 1.0.0
  */
-public class Creature {
+public class Creature
+{
     private static final int MIN_HEALTH = 1;
     private static final int MAX_HEALTH = 100;
     private static final int NO_HEALTH = 0;
@@ -158,16 +159,17 @@ public class Creature {
      *
      * @return details of the creature.
      */
-    public String getDetails() {
+    public String getDetails()
+    {
         StringBuilder builder;
+
         builder = new StringBuilder();
+
         builder.append("Is alive: " + this.isAlive());
         builder.append("Name: " + this.name);
         builder.append("Date of birth: " + this.dateOfBirth);
         builder.append("Age: " + this.getAgeYears());
         builder.append("Health: " + this.health);
-
-
 
         return builder.toString();
 
