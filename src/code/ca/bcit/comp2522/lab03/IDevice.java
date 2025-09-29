@@ -61,7 +61,11 @@ public abstract class IDevice {
      * @param minCharacterCount passes the minimum number of characters that can be accepted
      *                          as an integer.
      * */
-    public void stringValidator(String toBeValidated, int minCharacterCount, int maxCharacterCount) {
+    public void stringValidator(final String toBeValidated,
+                                final int minCharacterCount,
+                                final int maxCharacterCount)
+    {
+
         if (toBeValidated == null) {
             throw new IllegalArgumentException("Value cannot be null");
         }
