@@ -11,8 +11,8 @@ package ca.bcit.comp2522.lab03;
  */
 public class IPad extends IDevice {
 
-    private final int MAX_OSVERSION_CHARACTERS = 10;
-    private final int MIN_OSVERSION_CHARACTERS = 1;
+    private final static int MAX_OSVERSION_CHARACTERS = 10;
+    private final static int MIN_OSVERSION_CHARACTERS = 1;
 
     private final boolean hasCase;
     private final String OSVersion;

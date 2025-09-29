@@ -12,6 +12,7 @@ package ca.bcit.comp2522.lab03;
 public class IPhone16 extends IPhone {
     private static final int BASE_VARIANT_MEMORY = 128;
     private static final int IPHONE_HASH_WITH_HIGH_RES = 103;
+    private static final int IS_A_MULTIPLE_OF_BASE_VARIANT = 0;
 
     final boolean highResolutionCamera;
     final int memoryGB;
@@ -24,10 +25,10 @@ public class IPhone16 extends IPhone {
      * @param memoryGB of this IPhone
      */
     public IPhone16(
-        final double remainingPhonePlanMinutes,
-        final String carrier,
+        final double  remainingPhonePlanMinutes,
+        final         String carrier,
         final boolean highResolutionCamera,
-        final int memoryGB
+        final int     memoryGB
     ) {
         super(remainingPhonePlanMinutes, carrier);
 
@@ -123,9 +124,10 @@ public class IPhone16 extends IPhone {
      *                   since it needs to be a multiple of 128.
      * @param memoryGB passes the value of the memory to the method.
      * */
-    public void memoryGBValidator(int memoryGB)
+    public void memoryGBValidator(final int memoryGB)
+                throws IllegalArgumentException
     {
-        if (memoryGB % BASE_VARIANT_MEMORY != 0)
+        if (memoryGB % BASE_VARIANT_MEMORY != IS_A_MULTIPLE_OF_BASE_VARIANT)
         {
             throw new IllegalArgumentException("Invalid Memory value (GB)");
         }

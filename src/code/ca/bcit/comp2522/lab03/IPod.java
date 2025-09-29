@@ -129,7 +129,8 @@ public class IPod extends IDevice {
      *                        passed are not negative.
      * @param songNumber passes the value of the number of songs.
      * */
-    public void numberOfSongsValidator(int songNumber)
+    public void numberOfSongsValidator(final int songNumber)
+            throws IllegalArgumentException
     {
         if(songNumber < NO_SONGS)
         {

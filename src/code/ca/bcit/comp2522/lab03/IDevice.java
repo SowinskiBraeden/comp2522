@@ -10,8 +10,8 @@ package ca.bcit.comp2522.lab03;
  * @version 1.0.0
  */
 public abstract class IDevice {
-    private final int MIN_PURPOSE_CHARACTER = 1;
-    private final int MAX_PURPOSE_CHARACTER = 255;
+    private final static int MIN_PURPOSE_CHARACTER = 1;
+    private final static int MAX_PURPOSE_CHARACTER = 255;
 
     private final String purpose;
 
@@ -20,7 +20,8 @@ public abstract class IDevice {
      *
      * @param purpose of IDevice
      */
-    public IDevice(final String purpose) {
+    public IDevice(final String purpose)
+    {
 
         stringValidator(purpose,
                         MIN_PURPOSE_CHARACTER,
@@ -64,6 +65,7 @@ public abstract class IDevice {
     public void stringValidator(final String toBeValidated,
                                 final int minCharacterCount,
                                 final int maxCharacterCount)
+                                throws IllegalArgumentException
     {
 
         if (toBeValidated == null) {

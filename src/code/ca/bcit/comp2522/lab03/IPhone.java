@@ -129,6 +129,7 @@ public class IPhone extends IDevice {
     }
 
     public void minutesValidator(final double mins)
+            throws IllegalArgumentException
     {
         if(mins < NO_MINUTES_REMAINING)
         {
