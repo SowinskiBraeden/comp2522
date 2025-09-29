@@ -10,16 +10,22 @@ package ca.bcit.comp2522.lab03;
  * @version 1.0.0
  */
 public abstract class IDevice {
+    private final int MIN_PURPOSE_CHARACTER = 1;
+    private final int MAX_PURPOSE_CHARACTER = 255;
 
     private final String purpose;
 
     /**
      * IDevice constructor
+     *
      * @param purpose of IDevice
      */
     public IDevice(final String purpose) {
 
         // TODO: validate String inputs
+        stringValidator(purpose,
+                        MIN_PURPOSE_CHARACTER,
+                        MAX_PURPOSE_CHARACTER);
         this.purpose = purpose;
     }
 
@@ -30,6 +36,7 @@ public abstract class IDevice {
 
     /**
      * getPurpose of IDevice
+     *
      * @return purpose of IDevice
      */
     public String getPurpose() {
@@ -38,10 +45,28 @@ public abstract class IDevice {
 
     /**
      * toString returns details of IDevice
+     *
      * @return purpose of IDevice
      */
     @Override
     public String toString() {
         return this.purpose;
     }
+
+    public void stringValidator(String toBeValidated, int minCharacterCount, int maxCharacterCount) {
+        if (toBeValidated == null) {
+            throw new IllegalArgumentException("Value cannot be null");
+        }
+        if (toBeValidated.isEmpty()) {
+            throw new IllegalArgumentException("Value cannot be empty");
+        }
+        if (toBeValidated.isBlank()) {
+            throw new IllegalArgumentException("Value cannot be blank");
+        }
+        if (toBeValidated.length() < minCharacterCount || toBeValidated.length() > maxCharacterCount) {
+            throw new IllegalArgumentException("Value length must be between"
+                    + minCharacterCount + "and " + maxCharacterCount + " characters");
+        }
+    }
 }
+
