@@ -9,12 +9,14 @@ package ca.bcit.comp2522.lab03;
  * @author Trishaan Shetty
  * @version 1.0.0
  */
-public class IPhone extends IDevice {
-    private static final int MIN_CAREER_CHARACTERS = 3;
-    private static final int MAX_CAREER_CHARACTERS = 15;
-    private static final double NO_MINUTES_REMAINING = 0.0;
-    private static final int IPHONE_HASH = 11;
-    private static final int IPHONE_HASH_CODE = 101;
+public class IPhone extends IDevice
+{
+
+    private static final int    MIN_CAREER_CHARACTERS = 3;
+    private static final int    MAX_CAREER_CHARACTERS = 15;
+    private static final double NO_MINUTES_REMAINING  = 0.0;
+    private static final int    IPHONE_HASH           = 11;
+    private static final int    IPHONE_HASH_CODE      = 101;
 
     private final double remainingPhonePlanMinutes;
     private final String carrier;
@@ -26,16 +28,19 @@ public class IPhone extends IDevice {
      */
     public IPhone(
         final double remainingPhonePlanMinutes,
-        final String carrier)
-    {
+        final String carrier
+    ) {
         super("talking");
 
         minutesValidator(remainingPhonePlanMinutes);
         this.remainingPhonePlanMinutes = remainingPhonePlanMinutes;
 
-        stringValidator(carrier,
-                MIN_CAREER_CHARACTERS,
-                MAX_CAREER_CHARACTERS);
+        stringValidator(
+            carrier,
+            MIN_CAREER_CHARACTERS,
+            MAX_CAREER_CHARACTERS
+        );
+
         this.carrier = carrier;
     }
 
@@ -51,7 +56,8 @@ public class IPhone extends IDevice {
      * printDetails of IPhone including carrier and remaining
      * phone plan minutes
      */
-    public void printDetails() {
+    public void printDetails()
+    {
 
         final StringBuilder details;
 
@@ -71,7 +77,8 @@ public class IPhone extends IDevice {
      * @return IPhone instance variables
      */
     @Override
-    public String toString() {
+    public String toString()
+    {
 
         final StringBuilder iphoneDetails;
 
@@ -93,7 +100,8 @@ public class IPhone extends IDevice {
      * @return if the IPhone has the same remaining phone plan minutes
      */
     @Override
-    public boolean equals(final Object o) {
+    public boolean equals(final Object o)
+    {
 
         // Ensure object exists
         if (o == null) {
@@ -118,7 +126,8 @@ public class IPhone extends IDevice {
      * @return hash code of IPhone
      */
     @Override
-    public int hashCode() {
+    public int hashCode()
+    {
 
         int hash;
 
