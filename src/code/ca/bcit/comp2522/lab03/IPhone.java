@@ -10,7 +10,9 @@ package ca.bcit.comp2522.lab03;
  * @version 1.0.0
  */
 public class IPhone extends IDevice {
-
+    private static final int MIN_CAREER_CHARACTERS = 3;
+    private static final int MAX_CAREER_CHARACTERS = 15;
+    private static final double NO_MINUTES_REMAINING = 0.0;
     private static final int IPHONE_HASH = 11;
     private static final int IPHONE_HASH_CODE = 101;
 
@@ -24,12 +26,16 @@ public class IPhone extends IDevice {
      */
     public IPhone(
         final double remainingPhonePlanMinutes,
-        final String carrier
-    ) {
+        final String carrier)
+    {
         super("talking");
 
-        // TODO: validate String inputs, possibly other inputs too
+        minutesValidator(remainingPhonePlanMinutes);
         this.remainingPhonePlanMinutes = remainingPhonePlanMinutes;
+
+        stringValidator(carrier,
+                MIN_CAREER_CHARACTERS,
+                MAX_CAREER_CHARACTERS);
         this.carrier = carrier;
     }
 
@@ -67,8 +73,17 @@ public class IPhone extends IDevice {
     @Override
     public String toString() {
 
-        // TODO: convert to StringBuilder, refer to IPad
-        return super.toString() + " " + this.remainingPhonePlanMinutes + " " + this.carrier;
+        final StringBuilder iphoneDetails;
+
+        iphoneDetails = new StringBuilder();
+
+        iphoneDetails.append(super.toString());
+        iphoneDetails.append(" ");
+        iphoneDetails.append(this.remainingPhonePlanMinutes);
+        iphoneDetails.append(" ");
+        iphoneDetails.append(this.carrier);
+
+        return iphoneDetails.toString();
     }
 
     /**
@@ -110,6 +125,15 @@ public class IPhone extends IDevice {
         hash = IPHONE_HASH_CODE * IPHONE_HASH * (int) this.remainingPhonePlanMinutes;
 
         return hash;
+
+    }
+
+    public void minutesValidator(final double mins)
+    {
+        if(mins < NO_MINUTES_REMAINING)
+        {
+            throw new IllegalArgumentException("Minutes cannot be negative");
+        }
 
     }
 }
