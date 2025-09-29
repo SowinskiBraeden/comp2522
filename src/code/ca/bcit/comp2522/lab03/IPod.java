@@ -11,6 +11,7 @@ package ca.bcit.comp2522.lab03;
  */
 public class IPod extends IDevice {
 
+    private static final int NO_SONGS = 0;
     private static final int IPOD_HASH = 7;
     private static final int IPOD_HASH_CODE = 97;
 
@@ -28,9 +29,9 @@ public class IPod extends IDevice {
     ) {
         super("music");
 
-        // TODO: validate numberOfSongs input
-
+        numberOfSongsValidator(numberOfSongs);
         this.numberOfSongs = numberOfSongs;
+
         this.maxVolumeDecibels = maxVolumeDecibels;
     }
 
@@ -68,8 +69,17 @@ public class IPod extends IDevice {
     @Override
     public String toString() {
 
-        // TODO: change this to StringBuilder, refer to IPad
-        return super.toString() + " " +  this.numberOfSongs + " " + this.maxVolumeDecibels;
+        final StringBuilder ipodDetails;
+
+        ipodDetails = new StringBuilder();
+
+        ipodDetails.append(super.toString());
+        ipodDetails.append(" ");
+        ipodDetails.append(this.numberOfSongs);
+        ipodDetails.append(" ");
+        ipodDetails.append(this.maxVolumeDecibels);
+
+        return ipodDetails.toString();
     }
 
     /**
@@ -112,5 +122,19 @@ public class IPod extends IDevice {
 
         return hash;
 
+    }
+
+    /**
+     * numberOfSongsValidator makes sure the number of songs being
+     *                        passed are not negative.
+     * @param songNumber passes the value of the number of songs.
+     * */
+    public void numberOfSongsValidator(final int songNumber)
+            throws IllegalArgumentException
+    {
+        if(songNumber < NO_SONGS)
+        {
+            throw new IllegalArgumentException("Number of songs cannot be less than 0");
+        }
     }
 }

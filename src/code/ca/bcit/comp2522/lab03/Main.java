@@ -69,6 +69,7 @@ public class Main {
         final IPhone iphone1;
         final IPhone iphone2;
         final IPhone iphone3;
+
         iphone1 = new IPhone(120.0, "Verizon"); // 120 minutes, carrier Verizon
         iphone2 = new IPhone(180.0, "T-Mobile"); // 180 minutes, carrier T-Mobile
         iphone3 = new IPhone(120.0, "AT&T"); // 120 minutes, carrier AT&T

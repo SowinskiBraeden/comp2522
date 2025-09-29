@@ -11,6 +11,9 @@ package ca.bcit.comp2522.lab03;
  */
 public class IPad extends IDevice {
 
+    private final static int MAX_OSVERSION_CHARACTERS = 10;
+    private final static int MIN_OSVERSION_CHARACTERS = 1;
+
     private final boolean hasCase;
     private final String OSVersion;
 
@@ -24,9 +27,10 @@ public class IPad extends IDevice {
         final String OSVersion
     ) {
         super("learning");
-
-        // TODO: validate String inputs
         this.hasCase = hasCase;
+        stringValidator(OSVersion,
+                        MIN_OSVERSION_CHARACTERS,
+                        MAX_OSVERSION_CHARACTERS);
         this.OSVersion = OSVersion;
     }
 
