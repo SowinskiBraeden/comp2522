@@ -22,7 +22,6 @@ public abstract class IDevice {
      */
     public IDevice(final String purpose) {
 
-        // TODO: validate String inputs
         stringValidator(purpose,
                         MIN_PURPOSE_CHARACTER,
                         MAX_PURPOSE_CHARACTER);

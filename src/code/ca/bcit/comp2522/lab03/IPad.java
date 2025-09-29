@@ -27,8 +27,6 @@ public class IPad extends IDevice {
         final String OSVersion
     ) {
         super("learning");
-
-        // TODO: validate String inputs
         this.hasCase = hasCase;
         stringValidator(OSVersion,
                         MIN_OSVERSION_CHARACTERS,
