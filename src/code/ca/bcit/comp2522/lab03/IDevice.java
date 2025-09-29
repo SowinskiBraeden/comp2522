@@ -53,6 +53,15 @@ public abstract class IDevice {
         return this.purpose;
     }
 
+    /**
+     * stringValidator checks if the string is within character
+     * bounds and if it is blank, null or empty.
+     * @param toBeValidated passes the string that needs to be validated.
+     * @param maxCharacterCount passes the maximum number of characters that can be accepted
+     *                          as an integer.
+     * @param minCharacterCount passes the minimum number of characters that can be accepted
+     *                          as an integer.
+     * */
     public void stringValidator(String toBeValidated, int minCharacterCount, int maxCharacterCount) {
         if (toBeValidated == null) {
             throw new IllegalArgumentException("Value cannot be null");
