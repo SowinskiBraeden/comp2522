@@ -10,7 +10,7 @@ package ca.bcit.comp2522.lab03;
  * @version 1.0.0
  */
 public class IPhone16 extends IPhone {
-    private static final int BASE_VARIANT_MEMORY = 16;
+    private static final int BASE_VARIANT_MEMORY = 128;
     private static final int IPHONE_HASH_WITH_HIGH_RES = 103;
 
     final boolean highResolutionCamera;
@@ -118,6 +118,11 @@ public class IPhone16 extends IPhone {
 
     }
 
+    /**
+     * memoryGBValidator makes sure the right memory storage is assigned
+     *                   since it needs to be a multiple of 128.
+     * @param memoryGB passes the value of the memory to the method.
+     * */
     public void memoryGBValidator(int memoryGB)
     {
         if (memoryGB % BASE_VARIANT_MEMORY != 0)
