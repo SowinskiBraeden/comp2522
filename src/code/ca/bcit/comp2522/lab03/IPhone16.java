@@ -10,7 +10,7 @@ package ca.bcit.comp2522.lab03;
  * @version 1.0.0
  */
 public class IPhone16 extends IPhone {
-
+    private static final int BASE_VARIANT_MEMORY = 16;
     private static final int IPHONE_HASH_WITH_HIGH_RES = 103;
 
     final boolean highResolutionCamera;
@@ -31,9 +31,9 @@ public class IPhone16 extends IPhone {
     ) {
         super(remainingPhonePlanMinutes, carrier);
 
-        // TODO: validate memoryGB input?
-
         this.highResolutionCamera = highResolutionCamera;
+
+        memoryGBValidator(memoryGB);
         this.memoryGB = memoryGB;
     }
 
@@ -116,5 +116,13 @@ public class IPhone16 extends IPhone {
 
         return hash;
 
+    }
+
+    public void memoryGBValidator(int memoryGB)
+    {
+        if (memoryGB % BASE_VARIANT_MEMORY != 0)
+        {
+            throw new IllegalArgumentException("Invalid Memory value (GB)");
+        }
     }
 }
