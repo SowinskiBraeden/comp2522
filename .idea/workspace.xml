@@ -5,12 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4481728b-524b-48ee-9d70-e414a15f05bd" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/code/ca/bcit/comp2522/lab03/IDevice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/code/ca/bcit/comp2522/lab03/IDevice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/code/ca/bcit/comp2522/lab03/IPad.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/code/ca/bcit/comp2522/lab03/IPad.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/code/ca/bcit/comp2522/lab03/IPhone.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/code/ca/bcit/comp2522/lab03/IPhone.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/code/ca/bcit/comp2522/lab03/IPhone16.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/code/ca/bcit/comp2522/lab03/IPhone16.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/code/ca/bcit/comp2522/lab03/IPod.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/code/ca/bcit/comp2522/lab03/IPod.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,7 +113,7 @@
       <workItem from="1758425336799" duration="21000" />
       <workItem from="1758473282464" duration="4563000" />
       <workItem from="1758570032207" duration="7053000" />
-      <workItem from="1759179533296" duration="509000" />
+      <workItem from="1759179533296" duration="997000" />
     </task>
     <servers />
   </component>

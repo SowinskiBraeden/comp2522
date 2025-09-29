@@ -7,6 +7,7 @@ package ca.bcit.comp2522.lab03;
  * @author Braeden Sowinski
  * @author Nicolas Agostini
  * @author Trishaan Shetty
+ *  * @author Calvin Arifianto
  * @version 1.0.0
  */
 public abstract class IDevice
@@ -78,12 +79,15 @@ public abstract class IDevice
         if (toBeValidated == null) {
             throw new IllegalArgumentException("Value cannot be null");
         }
+
         if (toBeValidated.isEmpty()) {
             throw new IllegalArgumentException("Value cannot be empty");
         }
+
         if (toBeValidated.isBlank()) {
             throw new IllegalArgumentException("Value cannot be blank");
         }
+
         if (toBeValidated.length() < minCharacterCount ||
             toBeValidated.length() > maxCharacterCount
         )

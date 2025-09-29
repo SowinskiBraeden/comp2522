@@ -12,7 +12,7 @@ package ca.bcit.comp2522.lab03;
 public class IPod extends IDevice
 {
 
-    private static final int NO_SONGS       = 0;
+    private static final int MIN_SONGS      = 0;
     private static final int IPOD_HASH      = 7;
     private static final int IPOD_HASH_CODE = 97;
 
@@ -135,11 +135,10 @@ public class IPod extends IDevice
      * @param songNumber passes the value of the number of songs.
      * */
     public void numberOfSongsValidator(final int songNumber)
-            throws IllegalArgumentException
     {
-        if(songNumber < NO_SONGS)
+        if(songNumber < MIN_SONGS)
         {
-            throw new IllegalArgumentException("Number of songs cannot be less than 0");
+            throw new IllegalArgumentException("Number of songs cannot be less than " + MIN_SONGS);
         }
     }
 }

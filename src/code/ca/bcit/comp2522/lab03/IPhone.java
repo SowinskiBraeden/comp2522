@@ -14,7 +14,7 @@ public class IPhone extends IDevice
 
     private static final int    MIN_CAREER_CHARACTERS = 3;
     private static final int    MAX_CAREER_CHARACTERS = 15;
-    private static final double NO_MINUTES_REMAINING  = 0.0;
+    private static final double MIN_MINUTES_REMAINING  = 0.0;
     private static final int    IPHONE_HASH           = 11;
     private static final int    IPHONE_HASH_CODE      = 101;
 
@@ -137,13 +137,17 @@ public class IPhone extends IDevice
 
     }
 
-    public void minutesValidator(final double mins)
-            throws IllegalArgumentException
+    /**
+     * minutesValidator ensures that a given number of minutes
+     * is not less than the minimum.
+     * @param mins to verify
+     */
+    public static void minutesValidator(final double mins)
     {
-        if(mins < NO_MINUTES_REMAINING)
+        if(mins < MIN_MINUTES_REMAINING)
         {
-            throw new IllegalArgumentException("Minutes cannot be negative");
+            throw new IllegalArgumentException("Minutes cannot be less than " +
+                                                MIN_MINUTES_REMAINING + " minutes");
         }
-
     }
 }
