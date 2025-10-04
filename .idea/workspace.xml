@@ -5,12 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4481728b-524b-48ee-9d70-e414a15f05bd" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/code/ca/bcit/comp2522/lab03/IDevice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/code/ca/bcit/comp2522/lab03/IDevice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/code/ca/bcit/comp2522/lab03/IPad.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/code/ca/bcit/comp2522/lab03/IPad.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/code/ca/bcit/comp2522/lab03/IPhone.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/code/ca/bcit/comp2522/lab03/IPhone.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/code/ca/bcit/comp2522/lab03/IPhone16.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/code/ca/bcit/comp2522/lab03/IPhone16.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/code/ca/bcit/comp2522/lab03/IPod.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/code/ca/bcit/comp2522/lab03/IPod.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/code/ca/bcit/comp2522/lab03/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/code/ca/bcit/comp2522/lab03/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/code/ca/bcit/comp2522/lab04/Date.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/code/ca/bcit/comp2522/lab04/Date.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/code/ca/bcit/comp2522/lab04/Name.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/code/ca/bcit/comp2522/lab04/Name.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/code/ca/bcit/comp2522/lab04/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/code/ca/bcit/comp2522/lab04/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/code/ca/bcit/comp2522/lab04/Printable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/code/ca/bcit/comp2522/lab04/Printable.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,7 +44,7 @@
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "braeden/lab04",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/home/flami/Projects/comp2522",
     "node.js.detected.package.eslint": "true",
@@ -88,8 +87,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.26199.169" />
-        <option value="bundled-js-predefined-d6986cc7102b-9c94529fcfe0-JavaScript-IU-252.26199.169" />
+        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.26830.84" />
+        <option value="bundled-js-predefined-d6986cc7102b-3aa1da707db6-JavaScript-IU-252.26830.84" />
       </set>
     </attachedChunks>
   </component>

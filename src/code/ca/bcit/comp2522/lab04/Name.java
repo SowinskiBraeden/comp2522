@@ -1,19 +1,21 @@
 package ca.bcit.comp2522.lab04;
 
-public class Name {
+/**
+ * Name class holds first and last name,
+ * and validates name lengths
+ *
+ * @author Braeden Sowinski
+ * @author Nico Agostini
+ * @author Trishaan Shetty
+ * @author Calvin Arifianto
+ * @version 1.0.0
+ */
+public class Name implements Printable
+{
     private final String first;
     private final String last;
 
     private static final int MAX_CHARACTERS = 50;
-
-
-    public Name(final String first, final String last)
-    {
-        stringValidator(first, MAX_CHARACTERS);
-        stringValidator(last,  MAX_CHARACTERS);
-        this.first = first;
-        this.last = last;
-    }
 
     /**
      * stringValidator checks the string being passed into it for
@@ -23,44 +25,55 @@ public class Name {
      * @param maxLength passes the integer value of the number of character count
      *                  the String can be.
      * */
-    public void stringValidator(final String stringToCheck,
-                                final int maxLength){
+    private static void stringValidator(final String stringToCheck, final int maxLength)
+    {
 
         if (stringToCheck == null)
         {
-            throw new IllegalArgumentException(
-                    "String cannot be null");
+            throw new IllegalArgumentException("String cannot be null");
         }
 
-        if (stringToCheck.isBlank() ||
-                stringToCheck.isEmpty())
+        if (stringToCheck.isEmpty() ||
+            stringToCheck.isBlank())
         {
-            throw new IllegalArgumentException(
-                    "String cannot be empty or blank");
+            throw new IllegalArgumentException("String cannot be empty or blank");
         }
 
         if (stringToCheck.length() > maxLength)
         {
             throw new IllegalArgumentException(
                     "String longer than " + maxLength +
-                            " characters");
+                    " characters"
+            );
         }
     }
 
-    public void stringValidator(final String stringToCheck)
+    /**
+     * stringValidator with default MAX_CHARACTERS restriction
+     * @param stringToCheck passes the string to be checked
+     */
+    private static void stringValidator(final String stringToCheck)
     {
+        stringValidator(stringToCheck, MAX_CHARACTERS);
+    }
 
-        if (stringToCheck == null)
-        {
-            throw new IllegalArgumentException(
-                    "String cannot be null");
-        }
+    /**
+     * Name constructor
+     * @param first name to save
+     * @param last name to save
+     */
+    public Name(final String first, final String last)
+    {
+        stringValidator(first);
+        stringValidator(last);
 
-        if (stringToCheck.isBlank() ||
-                stringToCheck.isEmpty())
-        {
-            throw new IllegalArgumentException(
-                    "String cannot be empty or blank");
-        }
+        this.first = first;
+        this.last = last;
+    }
+
+    @Override
+    public void display()
+    {
+        System.out.println("First: " + first + " Last: " + last);
     }
 }

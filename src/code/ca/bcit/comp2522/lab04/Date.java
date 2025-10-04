@@ -11,66 +11,68 @@ package ca.bcit.comp2522.lab04;
  * @author Calvin Arifianto
  * @version 1.0.0
  */
-public final class Date implements Printable {
+public final class Date implements Printable
+{
+
     // Domain of dates
     private static final int MIN_YEAR = 1800;
     private static final int MAX_YEAR = 2025;
-    private static final int MIN_DAY = 1;
+    private static final int MIN_DAY  = 1;
 
     // Constants for calculating leap year, and days in given month
-    private static final int YEARS_BTWN_LEAP_YEARS = 4;
-    private static final int YEARS_PER_CENTURY = 100;
+    private static final int YEARS_BTWN_LEAP_YEARS     = 4;
+    private static final int YEARS_PER_CENTURY         = 100;
     private static final int YEARS_BTWN_LEAP_CENTURIES = 400;
-    private static final int LEAP_YEAR_MOD_RESULT = 0;
-    private static final int LEAP_YEAR_DAYS = 29;
-    private static final int NON_LEAP_YEAR_DAYS = 28;
-    private static final int MONTH_MOST_DAYS = 31;
-    private static final int MONTH_REGULAR_DAYS = 30;
-    private static final int EVEN = 2;
-    private static final int IS_DIVISIBLE = 1;
+    private static final int LEAP_YEAR_MOD_RESULT      = 0;
+    private static final int LEAP_YEAR_DAYS            = 29;
+    private static final int NON_LEAP_YEAR_DAYS        = 28;
+    private static final int MONTH_MOST_DAYS           = 31;
+    private static final int MONTH_REGULAR_DAYS        = 30;
+    private static final int EVEN                      = 2;
+    private static final int IS_DIVISIBLE              = 1;
 
     // Constants to get next or last value
-    private static final int GET_NEXT = 1;
+    private static final int GET_NEXT     = 1;
     private static final int GET_PREVIOUS = 1;
 
     // Constants to add to sum for calculating day of week
     private static final int CENTURY_CODE_YEAR_EIGHTEEN_HUNDREDS = 2;
-    private static final int CENTURY_CODE_YEAR_TWO_THOUSANDS = 6;
-    private static final int CENTURY_CODE_AND_MONTH_CODE = 12;
+    private static final int CENTURY_CODE_YEAR_TWO_THOUSANDS     = 6;
+    private static final int CENTURY_CODE_AND_MONTH_CODE         = 12;
 
     // Century definitions
     private static final int YEAR_EIGHTEEN_HUNDREDS = 1800;
     private static final int YEAR_NINETEEN_HUNDREDS = 1900;
-    private static final int YEAR_TWO_THOUSANDS = 2000;
+    private static final int YEAR_TWO_THOUSANDS     = 2000;
 
     // Months
-    private static final int JANUARY = 1;
-    private static final int FEBRUARY = 2;
-    private static final int MARCH = 3;
-    private static final int APRIL = 4;
-    private static final int MAY = 5;
-    private static final int JUNE = 6;
-    private static final int JULY = 7;
-    private static final int AUGUST = 8;
+    private static final int JANUARY   = 1;
+    private static final int FEBRUARY  = 2;
+    private static final int MARCH     = 3;
+    private static final int APRIL     = 4;
+    private static final int MAY       = 5;
+    private static final int JUNE      = 6;
+    private static final int JULY      = 7;
+    private static final int AUGUST    = 8;
     private static final int SEPTEMBER = 9;
-    private static final int OCTOBER = 10;
-    private static final int NOVEMBER = 11;
-    private static final int DECEMBER = 12;
+    private static final int OCTOBER   = 10;
+    private static final int NOVEMBER  = 11;
+    private static final int DECEMBER  = 12;
 
     // Days of week
-    private static final int SATURDAY = 0;
-    private static final int SUNDAY = 1;
-    private static final int MONDAY = 2;
-    private static final int TUESDAY = 3;
+    private static final int SATURDAY  = 0;
+    private static final int SUNDAY    = 1;
+    private static final int MONDAY    = 2;
+    private static final int TUESDAY   = 3;
     private static final int WEDNESDAY = 4;
-    private static final int THURSDAY = 5;
-    private static final int FRIDAY = 6;
+    private static final int THURSDAY  = 5;
+    private static final int FRIDAY    = 6;
 
     // Constants used to calculate day of week
     private static final int DIVISION_BY_TWELVE = 12;
-    private static final int DIVISION_BY_FOUR = 4;
-    private static final int DAYS_OF_WEEK = 7;
-    private static final String MONTH_CODES = "144025036146";
+    private static final int DIVISION_BY_FOUR   = 4;
+    private static final int DAYS_OF_WEEK       = 7;
+    private static final String MONTH_CODES     = "144025036146";
 
     private final int year;
     private final int month;
@@ -87,7 +89,8 @@ public final class Date implements Printable {
         c) If the year is divisible by LEAP_YEAR_MOD_ONE_HUNDRED and is
            divisible by LEAP_YEAR_MOD_FOUR_HUNDRED, then it is a leap year.
      */
-    private static boolean isLeapYear(final int year) {
+    private static boolean isLeapYear(final int year)
+    {
 
         final boolean isLeapYear;
         final boolean leapYearRuleOne;
@@ -120,7 +123,8 @@ public final class Date implements Printable {
             final boolean isLeapYear
     ) {
 
-        if (month == FEBRUARY) {
+        if (month == FEBRUARY)
+        {
             if (isLeapYear) {
                 return LEAP_YEAR_DAYS;
             } else {
@@ -216,7 +220,6 @@ public final class Date implements Printable {
      * @return year
      */
     public final int getYear() {
-
         return this.year;
     }
 
@@ -224,7 +227,8 @@ public final class Date implements Printable {
      * getMonth of Date
      * @return month
      */
-    public final String getMonth() {
+    public final String getMonth()
+    {
 
         final String month;
 
@@ -264,7 +268,6 @@ public final class Date implements Printable {
      * @return day
      */
     public final int getDay() {
-
         return this.day;
     }
 
@@ -272,8 +275,8 @@ public final class Date implements Printable {
      * getYyyyMmDd formatted as string
      * @return date in YyyyMmDd format
      */
-    public final String getYyyyMmDd() {
-
+    public final String getYyyyMmDd()
+    {
         final String date;
 
         date = this.year + "-" +  this.month + "-" + this.day;
@@ -306,7 +309,8 @@ public final class Date implements Printable {
      *
      * @return day of week
      */
-    public final String getDayOfWeek() {
+    public final String getDayOfWeek()
+    {
 
         final int year;
         final int century;
@@ -335,16 +339,16 @@ public final class Date implements Printable {
         year = this.year - century;
 
         if (
-                isLeapYear(this.year) &&
-                        (this.month == JANUARY || this.month == FEBRUARY) &&
-                        this.year >= YEAR_TWO_THOUSANDS
+            isLeapYear(this.year) &&
+            (this.month == JANUARY || this.month == FEBRUARY) &&
+            this.year >= YEAR_TWO_THOUSANDS
         ) {
 
             step0 = CENTURY_CODE_AND_MONTH_CODE;
 
         } else if (
                 isLeapYear(this.year) &&
-                        (this.month == JANUARY || this.month == FEBRUARY)
+                (this.month == JANUARY || this.month == FEBRUARY)
         ) {
             step0 = CENTURY_CODE_YEAR_TWO_THOUSANDS;
         } else if (this.year >= YEAR_TWO_THOUSANDS) {
@@ -384,6 +388,9 @@ public final class Date implements Printable {
         return day;
     }
 
+    /**
+     * display Date to console in yyyy-mm-dd format
+     */
     @Override
     public void display() {
         System.out.println(getYyyyMmDd());
