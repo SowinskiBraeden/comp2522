@@ -1,5 +1,7 @@
 package ca.bcit.comp2522.lab04;
 
+// TODO: implement Comparable, Printable, Reversible
+
 /**
  * Person contains date of birth, death, and a name.
  *
@@ -16,20 +18,6 @@ public class Person
     private final Name name;
 
     /**
-     * validateObject ensures a given object is not null
-     * @param object to ensure is not null
-     * @param objectName variable name of object for log
-     */
-    private static void validateObject(
-            final Object object,
-            final String objectName
-    ) {
-        if (object == null) {
-            throw new IllegalArgumentException(objectName + " cannot be null");
-        }
-    }
-
-    /**
      * Person construct
      * @param dateOfBirth of person, cannot be null
      * @param dateOfDeath of person, can be null
@@ -40,8 +28,8 @@ public class Person
         final Date dateOfDeath,
         final Name name
     ) {
-        validateObject(dateOfBirth, "date of birth");
-        validateObject(name, "name");
+        Validator.validateObject(dateOfBirth, "date of birth");
+        Validator.validateObject(name, "name");
 
         this.dateOfBirth = dateOfBirth;
         this.dateOfDeath = dateOfDeath;

@@ -15,47 +15,7 @@ public class Name implements Printable
     private final String first;
     private final String last;
 
-    private static final int MAX_CHARACTERS = 50;
-
-    /**
-     * stringValidator checks the string being passed into it for
-     * being null, blank, empty or over the limit of characters.
-     *
-     * @param stringToCheck passes the string to be checked.
-     * @param maxLength passes the integer value of the number of character count
-     *                  the String can be.
-     * */
-    private static void stringValidator(final String stringToCheck, final int maxLength)
-    {
-
-        if (stringToCheck == null)
-        {
-            throw new IllegalArgumentException("String cannot be null");
-        }
-
-        if (stringToCheck.isEmpty() ||
-            stringToCheck.isBlank())
-        {
-            throw new IllegalArgumentException("String cannot be empty or blank");
-        }
-
-        if (stringToCheck.length() > maxLength)
-        {
-            throw new IllegalArgumentException(
-                    "String longer than " + maxLength +
-                    " characters"
-            );
-        }
-    }
-
-    /**
-     * stringValidator with default MAX_CHARACTERS restriction
-     * @param stringToCheck passes the string to be checked
-     */
-    private static void stringValidator(final String stringToCheck)
-    {
-        stringValidator(stringToCheck, MAX_CHARACTERS);
-    }
+    private static final int MAX_NAME_CHARACTERS = 50;
 
     /**
      * Name constructor
@@ -64,8 +24,8 @@ public class Name implements Printable
      */
     public Name(final String first, final String last)
     {
-        stringValidator(first);
-        stringValidator(last);
+        Validator.validateString(first, MAX_NAME_CHARACTERS);
+        Validator.validateString(last, MAX_NAME_CHARACTERS);
 
         this.first = first;
         this.last = last;
