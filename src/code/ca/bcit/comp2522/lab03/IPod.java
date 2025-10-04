@@ -9,13 +9,14 @@ package ca.bcit.comp2522.lab03;
  * @author Trishaan Shetty
  * @version 1.0.0
  */
-public class IPod extends IDevice {
+public class IPod extends IDevice
+{
 
-    private static final int NO_SONGS = 0;
-    private static final int IPOD_HASH = 7;
+    private static final int MIN_SONGS      = 0;
+    private static final int IPOD_HASH      = 7;
     private static final int IPOD_HASH_CODE = 97;
 
-    private final int numberOfSongs;
+    private final int    numberOfSongs;
     private final double maxVolumeDecibels;
 
     /**
@@ -39,7 +40,8 @@ public class IPod extends IDevice {
      * printDetails of IPod including number of songs
      * and max volume in decibels.
      */
-    public void printDetails() {
+    public void printDetails()
+    {
 
         final StringBuilder details;
 
@@ -67,7 +69,8 @@ public class IPod extends IDevice {
      * @return IPod instance variables
      */
     @Override
-    public String toString() {
+    public String toString()
+    {
 
         final StringBuilder ipodDetails;
 
@@ -89,7 +92,8 @@ public class IPod extends IDevice {
      * @return if the IPods have the same number of songs
      */
     @Override
-    public boolean equals(final Object o) {
+    public boolean equals(final Object o)
+    {
 
         // Ensure object exists
         if (o == null) {
@@ -114,7 +118,8 @@ public class IPod extends IDevice {
      * @return hash code of IPod
      */
     @Override
-    public int hashCode() {
+    public int hashCode()
+    {
 
         int hash;
 
@@ -130,11 +135,10 @@ public class IPod extends IDevice {
      * @param songNumber passes the value of the number of songs.
      * */
     public void numberOfSongsValidator(final int songNumber)
-            throws IllegalArgumentException
     {
-        if(songNumber < NO_SONGS)
+        if(songNumber < MIN_SONGS)
         {
-            throw new IllegalArgumentException("Number of songs cannot be less than 0");
+            throw new IllegalArgumentException("Number of songs cannot be less than " + MIN_SONGS);
         }
     }
 }

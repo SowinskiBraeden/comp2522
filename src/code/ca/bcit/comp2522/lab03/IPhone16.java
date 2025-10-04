@@ -9,13 +9,13 @@ package ca.bcit.comp2522.lab03;
  * @author Trishaan Shetty
  * @version 1.0.0
  */
-public class IPhone16 extends IPhone {
-    private static final int BASE_VARIANT_MEMORY = 128;
-    private static final int IPHONE_HASH_WITH_HIGH_RES = 103;
-    private static final int IS_A_MULTIPLE_OF_BASE_VARIANT = 0;
+public class IPhone16 extends IPhone
+{
+
+    private static final int IPHONE_HASH_WITH_HIGH_RES     = 103;
 
     final boolean highResolutionCamera;
-    final int memoryGB;
+    final int     memoryGB;
 
     /**
      * IPhone16 constructor
@@ -34,7 +34,6 @@ public class IPhone16 extends IPhone {
 
         this.highResolutionCamera = highResolutionCamera;
 
-        memoryGBValidator(memoryGB);
         this.memoryGB = memoryGB;
     }
 
@@ -51,7 +50,8 @@ public class IPhone16 extends IPhone {
      * @return IPhone16 instance variables
      */
     @Override
-    public String toString() {
+    public String toString()
+    {
 
         final StringBuilder builder;
 
@@ -74,7 +74,8 @@ public class IPhone16 extends IPhone {
      * @return if the IPhone has the same remaining phone plan minutes and high resolution camera
      */
     @Override
-    public boolean equals(final Object o) {
+    public boolean equals(final Object o)
+    {
 
         // Ensure object exists
         if (o == null) {
@@ -105,7 +106,8 @@ public class IPhone16 extends IPhone {
      * @return hash code of IPhone16
      */
     @Override
-    public int hashCode() {
+    public int hashCode()
+    {
 
         int hash;
 
@@ -117,19 +119,5 @@ public class IPhone16 extends IPhone {
 
         return hash;
 
-    }
-
-    /**
-     * memoryGBValidator makes sure the right memory storage is assigned
-     *                   since it needs to be a multiple of 128.
-     * @param memoryGB passes the value of the memory to the method.
-     * */
-    public void memoryGBValidator(final int memoryGB)
-                throws IllegalArgumentException
-    {
-        if (memoryGB % BASE_VARIANT_MEMORY != IS_A_MULTIPLE_OF_BASE_VARIANT)
-        {
-            throw new IllegalArgumentException("Invalid Memory value (GB)");
-        }
     }
 }

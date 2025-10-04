@@ -9,13 +9,14 @@ package ca.bcit.comp2522.lab03;
  * @author Trishaan Shetty
  * @version 1.0.0
  */
-public class IPad extends IDevice {
+public class IPad extends IDevice
+{
 
-    private final static int MAX_OSVERSION_CHARACTERS = 10;
-    private final static int MIN_OSVERSION_CHARACTERS = 1;
+    private final static int MAX_OS_VERSION_CHARACTERS = 25;
+    private final static int MIN_OS_VERSION_CHARACTERS = 1;
 
     private final boolean hasCase;
-    private final String OSVersion;
+    private final String  OSVersion;
 
     /**
      * IPad constructor
@@ -24,13 +25,18 @@ public class IPad extends IDevice {
      */
     public IPad(
         final boolean hasCase,
-        final String OSVersion
+        final String  OSVersion
     ) {
         super("learning");
+
         this.hasCase = hasCase;
-        stringValidator(OSVersion,
-                        MIN_OSVERSION_CHARACTERS,
-                        MAX_OSVERSION_CHARACTERS);
+
+        stringValidator(
+            OSVersion,
+            MIN_OS_VERSION_CHARACTERS,
+            MAX_OS_VERSION_CHARACTERS
+        );
+
         this.OSVersion = OSVersion;
     }
 
@@ -46,7 +52,8 @@ public class IPad extends IDevice {
      * printDetails of IPad including if it has a case
      * and which operating system version it is running
      */
-    public void printDetails() {
+    public void printDetails()
+    {
 
         final StringBuilder details;
 
@@ -66,7 +73,8 @@ public class IPad extends IDevice {
      * @return IPad instance variables
      */
     @Override
-    public String toString() {
+    public String toString()
+    {
 
         final StringBuilder details;
 
@@ -89,7 +97,8 @@ public class IPad extends IDevice {
      * @return if the IPads have the same OS Version
      */
     @Override
-    public boolean equals(final Object o) {
+    public boolean equals(final Object o)
+    {
 
         // Ensure object exists
         if (o == null) {
