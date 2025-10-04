@@ -2,4 +2,6 @@
 /out/*
 *.class
 
-.idea/*
+/.idea/*
+
+comp2522.iml
