@@ -9,9 +9,9 @@ package ca.bcit.comp2522.lab04;
  * @author Calvin Arifianto
  * @version 1.0.0
  */
-public class Biography extends Book
+public class Biography extends Book implements Printable
 {
-    private final Person subject;
+    final Person subject;
 
     /**
      * Biography constructor
@@ -31,5 +31,53 @@ public class Biography extends Book
         Validator.validateObject(subject, "subject");
 
         this.subject = subject;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+
+        if (o == null || getClass() != o.getClass())
+        {
+            return false;
+        }
+
+        Biography other;
+        other = (Biography)o;
+
+        if (this == o)
+        {
+            return true;
+        }
+
+        return this.subject.equals(other.subject);
+    }
+
+    @Override
+    public int hashCode() {
+        if(subject == null)
+        {
+            return 0;
+        }
+        return subject.hashCode();
+    }
+
+
+    @Override
+    public void display() {
+
+        StringBuilder builder;
+        builder = new StringBuilder();
+
+        builder.append("Title: ");
+        builder.append(this.title);
+        builder.append("\nYear: ");
+        builder.append(this.year);
+        builder.append("\nAuthor: ");
+        builder.append(this.author.getFullName());
+        builder.append("\nSubject: ");
+        builder.append(this.subject.getFullName());
+
+
+        System.out.println(builder.toString());
     }
 }

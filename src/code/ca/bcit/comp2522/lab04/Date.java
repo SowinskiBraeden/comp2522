@@ -11,11 +11,11 @@ package ca.bcit.comp2522.lab04;
  * @author Calvin Arifianto
  * @version 1.0.0
  */
-public final class Date implements Printable
+public final class Date implements Printable, Comparable<Date>
 {
 
     // Domain of dates
-    private static final int MIN_YEAR = 1800;
+    private static final int MIN_YEAR = 1500;
     private static final int MAX_YEAR = 2025;
     private static final int MIN_DAY  = 1;
 
@@ -394,5 +394,31 @@ public final class Date implements Printable
     @Override
     public void display() {
         System.out.println(getYyyyMmDd());
+    }
+
+    /**
+     * Compares two dates, the older is the "largest"/"bigger"
+     */
+    @Override
+    public int compareTo(Date other) {
+        if (this.year < other.year) {
+            return -1;
+        } else if (this.year > other.year) {
+            return 1;
+        }
+
+        if (this.month < other.month) {
+            return -1;
+        } else if (this.month > other.month) {
+            return 1;
+        }
+
+        if (this.day < other.day) {
+            return -1;
+        } else if (this.day > other.day) {
+            return 1;
+        }
+
+        return 0; // years, months, and days are all equal
     }
 }

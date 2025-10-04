@@ -31,9 +31,13 @@ public class Name implements Printable
         this.last = last;
     }
 
+    protected String getFullName(){
+        return this.first + " " + this.last;
+    }
+
     @Override
     public void display()
     {
-        System.out.println("First: " + first + " Last: " + last);
+        System.out.println(first + " " + last);
     }
 }

@@ -10,7 +10,7 @@ package ca.bcit.comp2522.lab04;
  * @author Calvin Arifianto
  * @version 1.0.0
  */
-public class Autobiography extends Biography
+public class Autobiography extends Biography implements Printable
 {
     /**
      * Autobiography constructor
@@ -24,5 +24,24 @@ public class Autobiography extends Biography
         final Author author
     ) {
         super(title, year, author, author);
+    }
+
+    @Override
+    public void display() {
+
+        StringBuilder builder;
+        builder = new StringBuilder();
+
+        builder.append("Title: ");
+        builder.append(this.title);
+        builder.append(" - Year: ");
+        builder.append(this.year);
+        builder.append(" - Author: ");
+        builder.append(this.author.getFullName());
+        builder.append(" - Subject: ");
+        builder.append(this.subject.getFullName());
+
+
+        System.out.println(builder.toString());
     }
 }
