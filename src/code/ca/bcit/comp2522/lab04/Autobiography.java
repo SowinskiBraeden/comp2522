@@ -27,9 +27,10 @@ public class Autobiography extends Biography implements Printable
     }
 
     @Override
-    public void display() {
+    public void display()
+    {
 
-        StringBuilder builder;
+        final StringBuilder builder;
         builder = new StringBuilder();
 
         builder.append("Title: ");

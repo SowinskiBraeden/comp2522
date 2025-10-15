@@ -44,9 +44,10 @@ public class Person
     }
 
     @Override
-    public void display() {
+    public void display()
+    {
 
-        StringBuilder builder;
+        final StringBuilder builder;
         builder = new StringBuilder();
 
         builder.append("Date of Birth: ");
@@ -63,21 +64,17 @@ public class Person
     public void backward()
     {
         final StringBuilder builder;
-        final String fullName;
 
-        builder =  new StringBuilder();
-        fullName = this.name.getFullName();
+        builder =  new StringBuilder(this.name.getFullName());
 
-        for (int i = fullName.length() - 1; i >= 0; i--) {
-            builder.append(fullName.charAt(i));
-        }
+        builder.reverse();
 
         System.out.println(builder.toString());
     }
 
 
     @Override
-    public int compareTo(Person other) {
+    public int compareTo(final Person other) {
         return this.dateOfBirth.compareTo(other.dateOfBirth);
     }
 }

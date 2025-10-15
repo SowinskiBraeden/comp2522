@@ -10,7 +10,8 @@ package ca.bcit.comp2522.lab04;
  * @author Calvin Arifianto
  * @version 1.0.0
  */
-public class Author extends Person implements Printable{
+public class Author extends Person implements Printable
+{
     private static final int MAX_GENRE_LENGTH = 30;
 
     private final String genre;
@@ -23,9 +24,9 @@ public class Author extends Person implements Printable{
      * @param genre that the author writes in
      */
     public Author(
-        final Name name,
-        final Date dateOfBirth,
-        final Date dateOfDeath,
+        final Name   name,
+        final Date   dateOfBirth,
+        final Date   dateOfDeath,
         final String genre
     ) {
         super(dateOfBirth, dateOfDeath, name);
@@ -36,9 +37,10 @@ public class Author extends Person implements Printable{
     }
 
     @Override
-    public void display() {
+    public void display()
+    {
 
-        StringBuilder builder;
+        final StringBuilder builder;
         builder = new StringBuilder();
 
         builder.append("Name: ");

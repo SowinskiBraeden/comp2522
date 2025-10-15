@@ -1,7 +1,5 @@
 package ca.bcit.comp2522.lab04;
 
-//TODO proof read. Added the implementation and over rid the printable method.
-
 /**
  * Date contains useful methods about a given date.
  *
@@ -400,7 +398,8 @@ public final class Date implements Printable, Comparable<Date>
      * Compares two dates, the older is the "largest"/"bigger"
      */
     @Override
-    public int compareTo(Date other) {
+    public int compareTo(final Date other)
+    {
         if (this.year < other.year) {
             return -1;
         } else if (this.year > other.year) {

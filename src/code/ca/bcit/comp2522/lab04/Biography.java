@@ -34,7 +34,8 @@ public class Biography extends Book implements Printable
     }
 
     @Override
-    public boolean equals(Object o) {
+    public boolean equals(final Object o)
+    {
 
         if (o == null || getClass() != o.getClass())
         {
@@ -53,8 +54,9 @@ public class Biography extends Book implements Printable
     }
 
     @Override
-    public int hashCode() {
-        if(subject == null)
+    public int hashCode()
+    {
+        if (subject == null)
         {
             return 0;
         }
@@ -63,9 +65,10 @@ public class Biography extends Book implements Printable
 
 
     @Override
-    public void display() {
+    public void display()
+    {
 
-        StringBuilder builder;
+        final StringBuilder builder;
         builder = new StringBuilder();
 
         builder.append("Title: ");

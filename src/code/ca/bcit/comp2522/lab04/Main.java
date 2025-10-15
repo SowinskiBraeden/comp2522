@@ -8,10 +8,10 @@ public class Main {
         // -------------------------------------------------------------
 
         // George Orwell
-        Author author1;
-        Name nameAuthor1;
-        Date birthAuthor1;
-        Date deathAuthor1;
+        final Author author1;
+        final Name nameAuthor1;
+        final Date birthAuthor1;
+        final Date deathAuthor1;
 
         nameAuthor1 = new Name("George", "Orwell");
         birthAuthor1 = new Date(1903,6,25);
@@ -19,12 +19,11 @@ public class Main {
 
         author1 = new Author(nameAuthor1,birthAuthor1,deathAuthor1, "Dystopia");
 
-
         // Harper Lee
-        Author author2;
-        Name nameAuthor2;
-        Date birthAuthor2;
-        Date deathAuthor2;
+        final Author author2;
+        final Name nameAuthor2;
+        final Date birthAuthor2;
+        final Date deathAuthor2;
 
         nameAuthor2 = new Name("Harper", "Lee");
         birthAuthor2 = new Date(1926,4,28);
@@ -32,12 +31,11 @@ public class Main {
 
         author2 = new Author(nameAuthor2,birthAuthor2,deathAuthor2, "Literature/fiction");
 
-
         // Jane Austen
-        Author author3;
-        Name nameAuthor3;
-        Date birthAuthor3;
-        Date deathAuthor3;
+        final Author author3;
+        final Name nameAuthor3;
+        final Date birthAuthor3;
+        final Date deathAuthor3;
 
         nameAuthor3 = new Name("Jane", "Austen");
         birthAuthor3 = new Date(1775,12,16);
@@ -45,12 +43,11 @@ public class Main {
 
         author3 = new Author(nameAuthor3,birthAuthor3,deathAuthor3, "Literary realism");
 
-
         // F. Scott Fitzgerald
-        Author author4;
-        Name nameAuthor4;
-        Date birthAuthor4;
-        Date deathAuthor4;
+        final Author author4;
+        final Name nameAuthor4;
+        final Date birthAuthor4;
+        final Date deathAuthor4;
 
         nameAuthor4 = new Name("F. Scott", "Fitzgerald");
         birthAuthor4 = new Date(1896,9,24);
@@ -60,10 +57,10 @@ public class Main {
 
 
         // Herman Melville
-        Author author5;
-        Name nameAuthor5;
-        Date birthAuthor5;
-        Date deathAuthor5;
+        final Author author5;
+        final Name nameAuthor5;
+        final Date birthAuthor5;
+        final Date deathAuthor5;
 
         nameAuthor5 = new Name("Herman", "Melville");
         birthAuthor5 = new Date(1819,8,1);
@@ -71,16 +68,15 @@ public class Main {
 
         author5 = new Author(nameAuthor5,birthAuthor5,deathAuthor5, "Travelogue");
 
-
         // -------------------------------------------------------------
         // Books and associate them with their authors
         // -------------------------------------------------------------
 
-        Book book1;
-        Book book2;
-        Book book3;
-        Book book4;
-        Book book5;
+        final Book book1;
+        final Book book2;
+        final Book book3;
+        final Book book4;
+        final Book book5;
 
         book1 = new Book("1984",                  1949, author1);
         book2 = new Book("To Kill a Mockingbird", 1960, author2);
@@ -88,26 +84,25 @@ public class Main {
         book4 = new Book("The Great Gatsby",      1925, author4);
         book5 = new Book("Moby-Dick",             1851, author5);
 
-
         // -------------------------------------------------------------
         // Biographies (different author and subject)
         // -------------------------------------------------------------
         // Each biography has an author (who writes it) and a subject (the person it’s about)
 
         // Robert Caro: Robert Moses
-        Author biographyAuthor1;
-        Name nameBiographyAuthor1;
-        Date birthBiographyAuthor1;
-        Date deathBiographyAuthor1;
+        final Author biographyAuthor1;
+        final Name nameBiographyAuthor1;
+        final Date birthBiographyAuthor1;
+        final Date deathBiographyAuthor1;
 
         nameBiographyAuthor1 = new Name("Robert","Caro");
         birthBiographyAuthor1 = new Date(1935,10,30);
         deathBiographyAuthor1 = new Date(1935,10,30);
 
-        Person biographySubject1;
-        Name nameBiographySubject1;
-        Date birthBiographySubject1;
-        Date deathBiographySubject1;
+        final Person biographySubject1;
+        final Name nameBiographySubject1;
+        final Date birthBiographySubject1;
+        final Date deathBiographySubject1;
 
         nameBiographySubject1 = new Name("Robert","Moses");
         birthBiographySubject1 = new Date(1888,12,18);
@@ -116,21 +111,20 @@ public class Main {
         biographyAuthor1 = new Author(nameBiographyAuthor1,birthBiographyAuthor1, deathBiographyAuthor1, "Biography");
         biographySubject1 = new Person(birthBiographySubject1, deathBiographySubject1, nameBiographySubject1);
 
-
         // Walter Isaacson: Steve Jobs
-        Author biographyAuthor2;
-        Name nameBiographyAuthor2;
-        Date birthBiographyAuthor2;
-        Date deathBiographyAuthor2;
+        final Author biographyAuthor2;
+        final Name nameBiographyAuthor2;
+        final Date birthBiographyAuthor2;
+        final Date deathBiographyAuthor2;
 
         nameBiographyAuthor2 = new Name("Walter","Isaacson");
         birthBiographyAuthor2 = new Date(1952,5,20);
         deathBiographyAuthor2 = new Date(1952,5,20);
 
-        Person biographySubject2;
-        Name nameBiographySubject2;
-        Date birthBiographySubject2;
-        Date deathBiographySubject2;
+        final Person biographySubject2;
+        final Name nameBiographySubject2;
+        final Date birthBiographySubject2;
+        final Date deathBiographySubject2;
 
         nameBiographySubject2 = new Name("Steve","Jobs");
         birthBiographySubject2 = new Date(1955,2,24);
@@ -139,21 +133,20 @@ public class Main {
         biographyAuthor2 = new Author(nameBiographyAuthor2, birthBiographyAuthor2, deathBiographyAuthor2, "Biography");
         biographySubject2 = new Person(birthBiographySubject2, deathBiographySubject2, nameBiographySubject2);
 
-
         // Martin Gilbert: Winston Churchill
-        Author biographyAuthor3;
-        Name nameBiographyAuthor3;
-        Date birthBiographyAuthor3;
-        Date deathBiographyAuthor3;
+        final Author biographyAuthor3;
+        final Name nameBiographyAuthor3;
+        final Date birthBiographyAuthor3;
+        final Date deathBiographyAuthor3;
 
         nameBiographyAuthor3 = new Name("Martin","Gilbert");
         birthBiographyAuthor3 = new Date(1936,10,25);
         deathBiographyAuthor3 = new Date(2015,2,3);
 
-        Person biographySubject3;
-        Name nameBiographySubject3;
-        Date birthBiographySubject3;
-        Date deathBiographySubject3;
+        final Person biographySubject3;
+        final Name nameBiographySubject3;
+        final Date birthBiographySubject3;
+        final Date deathBiographySubject3;
 
         nameBiographySubject3 = new Name("Winston","Churchill");
         birthBiographySubject3 = new Date(1874,11,30);
@@ -162,21 +155,20 @@ public class Main {
         biographyAuthor3 = new Author(nameBiographyAuthor3, birthBiographyAuthor3, deathBiographyAuthor3, "Biography");
         biographySubject3 = new Person(birthBiographySubject3, deathBiographySubject3, nameBiographySubject3);
 
-
         // Ron Chernow: Alexander Hamilton
-        Author biographyAuthor4;
-        Name nameBiographyAuthor4;
-        Date birthBiographyAuthor4;
-        Date deathBiographyAuthor4;
+        final Author biographyAuthor4;
+        final Name nameBiographyAuthor4;
+        final Date birthBiographyAuthor4;
+        final Date deathBiographyAuthor4;
 
         nameBiographyAuthor4 = new Name("Ron","Chernow");
         birthBiographyAuthor4 = new Date(1949,3,3);
         deathBiographyAuthor4 = new Date(1949,3,3);
 
-        Person biographySubject4;
-        Name nameBiographySubject4;
-        Date birthBiographySubject4;
-        Date deathBiographySubject4;
+        final Person biographySubject4;
+        final Name nameBiographySubject4;
+        final Date birthBiographySubject4;
+        final Date deathBiographySubject4;
 
         nameBiographySubject4 = new Name("Alexander","Hamilton");
         birthBiographySubject4 = new Date(1755,1,11);
@@ -185,21 +177,20 @@ public class Main {
         biographyAuthor4 = new Author(nameBiographyAuthor4, birthBiographyAuthor4, deathBiographyAuthor4, "Biography");
         biographySubject4 = new Person(birthBiographySubject4, deathBiographySubject4, nameBiographySubject4);
 
-
         // Walter Isaacson: Albert Einstein
-        Author biographyAuthor5;
-        Name nameBiographyAuthor5;
-        Date birthBiographyAuthor5;
-        Date deathBiographyAuthor5;
+        final Author biographyAuthor5;
+        final Name nameBiographyAuthor5;
+        final Date birthBiographyAuthor5;
+        final Date deathBiographyAuthor5;
 
         nameBiographyAuthor5 = new Name("Walter","Isaacson");
         birthBiographyAuthor5 = new Date(1952,5,20);
         deathBiographyAuthor5 = new Date(1952,5,20);
 
-        Person biographySubject5;
-        Name nameBiographySubject5;
-        Date birthBiographySubject5;
-        Date deathBiographySubject5;
+        final Person biographySubject5;
+        final Name nameBiographySubject5;
+        final Date birthBiographySubject5;
+        final Date deathBiographySubject5;
 
         nameBiographySubject5 = new Name("Albert","Einstein");
         birthBiographySubject5 = new Date(1879,3,14);
@@ -208,16 +199,15 @@ public class Main {
         biographyAuthor5 = new Author(nameBiographyAuthor5, birthBiographyAuthor5, deathBiographyAuthor5, "Biography");
         biographySubject5 = new Person(birthBiographySubject5, deathBiographySubject5, nameBiographySubject5);
 
-
         // -------------------------------------------------------------
         // Biography objects linking authors and subjects
         // -------------------------------------------------------------
 
-        Biography biography1;
-        Biography biography2;
-        Biography biography3;
-        Biography biography4;
-        Biography biography5;
+        final Biography biography1;
+        final Biography biography2;
+        final Biography biography3;
+        final Biography biography4;
+        final Biography biography5;
 
         biography1 = new Biography("The Power Broker",                1974, biographyAuthor1, biographySubject1);
         biography2 = new Biography("Steve Jobs",                      2011, biographyAuthor2, biographySubject2);
@@ -231,67 +221,67 @@ public class Main {
         // -------------------------------------------------------------
 
         // Anne Frank — "The Diary of a Young Girl"
-        Name nameAutobiographyAuthor1;
-        Date birthAutobiographyAuthor1;
-        Date deathAutobiographyAuthor1;
+        final Name nameAutobiographyAuthor1;
+        final Date birthAutobiographyAuthor1;
+        final Date deathAutobiographyAuthor1;
 
         nameAutobiographyAuthor1 = new Name("Anne", "Frank");
         birthAutobiographyAuthor1 = new Date(1929, 6, 12);
         deathAutobiographyAuthor1 = new Date(1945, 3, 1); // Approximate date
 
-        Author autobiographyAuthor1;
+        final Author autobiographyAuthor1;
         autobiographyAuthor1 = new Author(nameAutobiographyAuthor1, birthAutobiographyAuthor1, deathAutobiographyAuthor1, "Autobiography");
 
 
         // Nelson Mandela — "Long Walk to Freedom"
-        Name nameAutobiographyAuthor2;
-        Date birthAutobiographyAuthor2;
-        Date deathAutobiographyAuthor2;
+        final Name nameAutobiographyAuthor2;
+        final Date birthAutobiographyAuthor2;
+        final Date deathAutobiographyAuthor2;
 
         nameAutobiographyAuthor2 = new Name("Nelson", "Mandela");
         birthAutobiographyAuthor2 = new Date(1918, 7, 18);
         deathAutobiographyAuthor2 = new Date(2013, 12, 5);
 
-        Author autobiographyAuthor2;
+        final Author autobiographyAuthor2;
         autobiographyAuthor2 = new Author(nameAutobiographyAuthor2, birthAutobiographyAuthor2, deathAutobiographyAuthor2, "Autobiography");
 
 
         // Mahatma Gandhi — "The Story of My Experiments with Truth"
-        Name nameAutobiographyAuthor3;
-        Date birthAutobiographyAuthor3;
-        Date deathAutobiographyAuthor3;
+        final Name nameAutobiographyAuthor3;
+        final Date birthAutobiographyAuthor3;
+        final Date deathAutobiographyAuthor3;
 
         nameAutobiographyAuthor3 = new Name("Mahatma", "Gandhi");
         birthAutobiographyAuthor3 = new Date(1869, 10, 2);
         deathAutobiographyAuthor3 = new Date(1948, 1, 30);
 
-        Author autobiographyAuthor3;
+        final Author autobiographyAuthor3;
         autobiographyAuthor3 = new Author(nameAutobiographyAuthor3, birthAutobiographyAuthor3, deathAutobiographyAuthor3, "Autobiography");
 
 
         // Maya Angelou — "I Know Why the Caged Bird Sings"
-        Name nameAutobiographyAuthor4;
-        Date birthAutobiographyAuthor4;
-        Date deathAutobiographyAuthor4;
+        final Name nameAutobiographyAuthor4;
+        final Date birthAutobiographyAuthor4;
+        final Date deathAutobiographyAuthor4;
 
         nameAutobiographyAuthor4 = new Name("Maya", "Angelou");
         birthAutobiographyAuthor4 = new Date(1928, 4, 4);
         deathAutobiographyAuthor4 = new Date(2014, 5, 28);
 
-        Author autobiographyAuthor4;
+        final Author autobiographyAuthor4;
         autobiographyAuthor4 = new Author(nameAutobiographyAuthor4, birthAutobiographyAuthor4, deathAutobiographyAuthor4, "Autobiography");
 
 
         // Malcolm X — "The Autobiography of Malcolm X"
-        Name nameAutobiographyAuthor5;
-        Date birthAutobiographyAuthor5;
-        Date deathAutobiographyAuthor5;
+        final Name nameAutobiographyAuthor5;
+        final Date birthAutobiographyAuthor5;
+        final Date deathAutobiographyAuthor5;
 
         nameAutobiographyAuthor5 = new Name("Malcolm", "X");
         birthAutobiographyAuthor5 = new Date(1925, 5, 19);
         deathAutobiographyAuthor5 = new Date(1965, 2, 21);
 
-        Author autobiographyAuthor5;
+        final Author autobiographyAuthor5;
         autobiographyAuthor5 = new Author(nameAutobiographyAuthor5, birthAutobiographyAuthor5, deathAutobiographyAuthor5, "Autobiography");
 
 
@@ -299,11 +289,11 @@ public class Main {
         // Instantiate Autobiography objects
         // -------------------------------------------------------------
 
-        Autobiography AutoBiography1;
-        Autobiography AutoBiography2;
-        Autobiography AutoBiography3;
-        Autobiography AutoBiography4;
-        Autobiography AutoBiography5;
+        final Autobiography AutoBiography1;
+        final Autobiography AutoBiography2;
+        final Autobiography AutoBiography3;
+        final Autobiography AutoBiography4;
+        final Autobiography AutoBiography5;
 
         AutoBiography1 = new Autobiography("The Diary of a Young Girl",              1947, autobiographyAuthor1);
         AutoBiography2 = new Autobiography("Long Walk to Freedom",                   1994, autobiographyAuthor2);

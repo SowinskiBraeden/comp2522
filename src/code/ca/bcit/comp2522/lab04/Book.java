@@ -1,7 +1,5 @@
 package ca.bcit.comp2522.lab04;
 
-// TODO: Implement Comparable, Printable, Reversible
-
 /**
  * Book has an Author, year, and title
  *
@@ -45,9 +43,10 @@ public class Book
     }
 
     @Override
-    public void display() {
+    public void display()
+    {
 
-        StringBuilder builder;
+        final StringBuilder builder;
         builder = new StringBuilder();
 
         builder.append("Title: ");
@@ -65,17 +64,16 @@ public class Book
     public void backward()
     {
         final StringBuilder builder;
-        builder =  new StringBuilder();
+        builder = new StringBuilder(this.title);
 
-        for (int i = this.title.length() - 1; i >= 0; i--) {
-            builder.append(title.charAt(i));
-        }
+        builder.reverse();
 
         System.out.println(builder.toString());
     }
 
     @Override
-    public int compareTo(Book other) {
+    public int compareTo(final Book other)
+    {
         if (this.year < other.year) {
             return -1;
         } else if (this.year > other.year) {
