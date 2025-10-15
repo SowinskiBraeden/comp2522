@@ -50,9 +50,9 @@ public class Person
         builder = new StringBuilder();
 
         builder.append("Date of Birth: ");
-        builder.append(this.dateOfBirth);
+        builder.append(this.dateOfBirth.getYyyyMmDd());
         builder.append("\nDate of Death: ");
-        builder.append(this.dateOfDeath);
+        builder.append(this.dateOfDeath.getYyyyMmDd());
         builder.append("\nName: ");
         builder.append(this.name.getFullName());
 

@@ -44,9 +44,9 @@ public class Author extends Person implements Printable{
         builder.append("Name: ");
         builder.append(this.name.getFullName());
         builder.append("\nDate of Birth: ");
-        builder.append(this.dateOfBirth);
+        builder.append(this.dateOfBirth.getYyyyMmDd());
         builder.append("\nDate of Death: ");
-        builder.append(this.dateOfDeath);
+        builder.append(this.dateOfDeath.getYyyyMmDd());
         builder.append("\nGenre: ");
         builder.append(this.genre);
 
