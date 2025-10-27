@@ -17,9 +17,9 @@ public class Novel
 
     /**
      * Novel constructor
-     * @param title of novel
-     * @param authorName of the novel
-     * @param yearPublished of the novel
+     * @param title - The title of novel
+     * @param authorName - The authorName of the novel
+     * @param yearPublished - The year published of the novel
      */
     public Novel(
         final String title,

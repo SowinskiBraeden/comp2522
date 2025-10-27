@@ -11,7 +11,7 @@ package ca.bcit.comp2522.lab05;
 public class Validator {
     /**
      * validateString ensures string input is not null or empty
-     * @param str to validate
+     * @param str - The String to validate
      * @throws IllegalArgumentException if invalid string
      */
     public static void validateString(final String str)
