@@ -10,7 +10,8 @@ package ca.bcit.comp2522.lab04;
  * @author Calvin Arifianto
  * @version 1.0.0
  */
-public class Name implements Printable
+public class Name
+        implements Printable
 {
     private static final int MAX_NAME_CHARACTERS = 50;
 

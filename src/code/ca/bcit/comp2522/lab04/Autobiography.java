@@ -10,7 +10,9 @@ package ca.bcit.comp2522.lab04;
  * @author Calvin Arifianto
  * @version 1.0.0
  */
-public class Autobiography extends Biography implements Printable
+public class Autobiography
+        extends Biography
+        implements Printable
 {
     /**
      * Autobiography constructor

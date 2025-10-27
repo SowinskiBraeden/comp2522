@@ -8,7 +8,9 @@ package ca.bcit.comp2522.lab05;
  * @author Nico Agostini
  * @author Trishaan Shetty
  */
-public class Novel implements Comparable<Novel> {
+public class Novel
+        implements Comparable<Novel>
+{
     private final String title;
     private final String authorName;
     private final int    yearPublished;

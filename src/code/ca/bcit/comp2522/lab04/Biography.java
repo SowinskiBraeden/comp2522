@@ -9,8 +9,11 @@ package ca.bcit.comp2522.lab04;
  * @author Calvin Arifianto
  * @version 1.0.0
  */
-public class Biography extends Book implements Printable
+public class Biography
+        extends Book
+        implements Printable
 {
+    private static final int DEFAULT_HASH_CODE = 0;
     private final Person subject;
 
     /**
@@ -62,7 +65,7 @@ public class Biography extends Book implements Printable
     {
         if (subject == null)
         {
-            return 0;
+            return DEFAULT_HASH_CODE;
         }
         return subject.hashCode();
     }
@@ -89,6 +92,10 @@ public class Biography extends Book implements Printable
         System.out.println(builder.toString());
     }
 
+    /**
+     * getSubject of the Biography i.e. the Person it is about
+     * @return subject of biography
+     */
     public Person getSubject() {
         return this.subject;
     }

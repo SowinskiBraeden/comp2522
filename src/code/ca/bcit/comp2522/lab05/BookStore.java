@@ -19,6 +19,8 @@ import java.util.Iterator;
  */
 public class BookStore {
     private static final int DECADE_RANGE = 9;
+    private static final int DEFAULT_LONGEST_VALUE = 0;
+    private static final int TO_PERCENTAGE = 100;
 
     private final String bookStoreName;
     private final List<Novel> novels;
@@ -226,7 +228,7 @@ public class BookStore {
         String title;
         int longest;
 
-        longest = 0;
+        longest = DEFAULT_LONGEST_VALUE;
         title = "";
 
         for (final Novel novel : this.novels) {
@@ -264,7 +266,7 @@ public class BookStore {
     {
         int count;
 
-        count = 0;
+        count = DEFAULT_LONGEST_VALUE;
 
         for (final Novel novel : this.novels) {
             if (novel.getTitle().toLowerCase().contains(word.toLowerCase())) {
@@ -289,7 +291,7 @@ public class BookStore {
     ) {
         int inRange;
 
-        inRange = 0;
+        inRange = DEFAULT_LONGEST_VALUE;
 
         for  (final Novel novel : this.novels) {
             if (novel.getYearPublished() >= first && novel.getYearPublished() <= last) {
@@ -297,7 +299,7 @@ public class BookStore {
             }
         }
 
-        return ((float) inRange / (float) this.novels.size()) * 100;
+        return ((float) inRange / (float) this.novels.size()) * TO_PERCENTAGE;
     }
 
     /**

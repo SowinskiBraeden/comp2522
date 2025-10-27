@@ -14,7 +14,10 @@ public class Book
                     Printable,
                     Reversible
 {
-    private static final int MAX_TITLE_LENGTH = 100;
+    private static final int LESS_THAN        = -1;
+    private static final int GREATER_THAN     = 1;
+    private static final int EQUALS           = 0;
+    private static final int MAX_TITLE_LENGTH = 1000;
     private static final int MIN_YEAR         = 1;
     private static final int MAX_YEAR         = 2025;
 
@@ -87,11 +90,11 @@ public class Book
     public int compareTo(final Book other)
     {
         if (this.year < other.year) {
-            return -1;
+            return LESS_THAN;
         } else if (this.year > other.year) {
-            return 1;
+            return GREATER_THAN;
         }
 
-        return 0;
+        return EQUALS;
     }
 }

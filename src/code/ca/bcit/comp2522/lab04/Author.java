@@ -10,7 +10,9 @@ package ca.bcit.comp2522.lab04;
  * @author Calvin Arifianto
  * @version 1.0.0
  */
-public class Author extends Person implements Printable
+public class Author
+        extends Person
+        implements Printable
 {
     private static final int MAX_GENRE_LENGTH = 30;
 
