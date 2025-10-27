@@ -1,6 +1,17 @@
 package ca.bcit.comp2522.lab04;
 
+/**
+ * Main program driver class
+ * @author Braeden Sowinski
+ * @author Nico Agostini
+ * @author Trishaan Shetty
+ * @version 1.0.0
+ */
 public class Main {
+    /**
+     * main program entry
+     * @param args from the cli
+     */
     public static void main(final String[] args) {
 
         // -------------------------------------------------------------

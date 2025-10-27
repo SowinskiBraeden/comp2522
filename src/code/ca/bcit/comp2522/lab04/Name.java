@@ -12,10 +12,10 @@ package ca.bcit.comp2522.lab04;
  */
 public class Name implements Printable
 {
+    private static final int MAX_NAME_CHARACTERS = 50;
+
     private final String first;
     private final String last;
-
-    private static final int MAX_NAME_CHARACTERS = 50;
 
     /**
      * Name constructor
@@ -31,10 +31,17 @@ public class Name implements Printable
         this.last = last;
     }
 
+    /**
+     * getFullName includes the first and last name
+     * @return first name and last name
+     */
     protected String getFullName(){
         return this.first + " " + this.last;
     }
 
+    /**
+     * display the full name, first and last
+     */
     @Override
     public void display()
     {

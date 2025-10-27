@@ -11,7 +11,7 @@ package ca.bcit.comp2522.lab04;
  */
 public class Biography extends Book implements Printable
 {
-    final Person subject;
+    private final Person subject;
 
     /**
      * Biography constructor
@@ -33,26 +33,30 @@ public class Biography extends Book implements Printable
         this.subject = subject;
     }
 
+    /**
+     * equals checks if a given object is equal to this object
+     * @param o   the reference object with which to compare.
+     * @return if the given object is equal
+     */
     @Override
     public boolean equals(final Object o)
     {
 
-        if (o == null || getClass() != o.getClass())
+        if (o == null || !this.getClass().equals(o.getClass()))
         {
             return false;
         }
 
-        Biography other;
+        final Biography other;
         other = (Biography)o;
 
-        if (this == o)
-        {
-            return true;
-        }
-
-        return this.subject.equals(other.subject);
+        return this.subject.equals(other.getSubject());
     }
 
+    /**
+     * hashCode gives the hashcode of the biography
+     * @return hash code of biography
+     */
     @Override
     public int hashCode()
     {
@@ -63,11 +67,12 @@ public class Biography extends Book implements Printable
         return subject.hashCode();
     }
 
-
+    /**
+     * display formatted instance variable of the biography
+     */
     @Override
     public void display()
     {
-
         final StringBuilder builder;
         builder = new StringBuilder();
 
@@ -82,5 +87,9 @@ public class Biography extends Book implements Printable
 
 
         System.out.println(builder.toString());
+    }
+
+    public Person getSubject() {
+        return this.subject;
     }
 }

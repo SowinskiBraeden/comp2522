@@ -26,6 +26,9 @@ public class Autobiography extends Biography implements Printable
         super(title, year, author, author);
     }
 
+    /**
+     * display formatted information about the Autobiography
+     */
     @Override
     public void display()
     {

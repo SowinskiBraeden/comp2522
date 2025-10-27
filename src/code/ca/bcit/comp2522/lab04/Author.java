@@ -36,6 +36,9 @@ public class Author extends Person implements Printable
         this.genre = genre;
     }
 
+    /**
+     * display formatted information about the Author
+     */
     @Override
     public void display()
     {

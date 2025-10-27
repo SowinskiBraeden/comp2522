@@ -16,6 +16,8 @@ public class Person
                     Printable,
                     Reversible
 {
+    private static final int SUCCESSFUL_MATCH = 0;
+
     protected final Date dateOfBirth;
     protected final Date dateOfDeath;
     protected final Name name;
@@ -39,10 +41,25 @@ public class Person
         this.name = name;
     }
 
+    /**
+     * getFullName of the Person
+     * @return the full name
+     */
     public String getFullName(){
         return this.name.getFullName();
     }
 
+    /**
+     * getDateOfBirth of person
+     * @return the date of birth of the person
+     */
+    public Date getDateOfBirth() {
+        return this.dateOfBirth;
+    }
+
+    /**
+     * display formatted instance data of the person
+     */
     @Override
     public void display()
     {
@@ -60,6 +77,9 @@ public class Person
         System.out.println(builder.toString());
     }
 
+    /**
+     * backward version of the full name
+     */
     @Override
     public void backward()
     {
@@ -72,9 +92,29 @@ public class Person
         System.out.println(builder.toString());
     }
 
-
+    /**
+     * compareTo another person based on date of birth
+     * @param other person to compare
+     * @return if a person is older, younger or same age
+     */
     @Override
     public int compareTo(final Person other) {
         return this.dateOfBirth.compareTo(other.dateOfBirth);
+    }
+
+    /**
+     * equals checks if another given object is equal to this object
+     * @param o   the reference object with which to compare.
+     * @return if given object are equals
+     */
+    public boolean equals(final Object o) {
+        if (o == null || !this.getClass().equals(o.getClass())) {
+            return false;
+        }
+
+        final Person p = (Person)o;
+
+        return p.getFullName().equals(this.getFullName()) &&
+               this.getDateOfBirth().compareTo(p.getDateOfBirth()) == SUCCESSFUL_MATCH;
     }
 }

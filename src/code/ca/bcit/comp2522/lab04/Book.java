@@ -42,6 +42,9 @@ public class Book
         this.author = author;
     }
 
+    /**
+     * display formatted instance data of the book
+     */
     @Override
     public void display()
     {
@@ -60,6 +63,9 @@ public class Book
         System.out.println(builder.toString());
     }
 
+    /**
+     * backward prints the name of the title in reverse
+     */
     @Override
     public void backward()
     {
@@ -71,6 +77,12 @@ public class Book
         System.out.println(builder.toString());
     }
 
+    /**
+     * compareTo another book, books are equal if they are written in the same
+     * year
+     * @param other book to compare to
+     * @return if the given book is older, newer or same age as this book
+     */
     @Override
     public int compareTo(final Book other)
     {
