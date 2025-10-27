@@ -328,7 +328,7 @@ public class BookStore {
     /**
      * getBooksThisLength returns a list of books that match
      * a given title length
-     * @param titleLength to compare books to
+     * @param titleLength - The title length to compare books to
      * @return list of books matching given title length
      */
     public List<Novel> getBooksThisLength(final int titleLength) {
@@ -347,7 +347,7 @@ public class BookStore {
 
     /**
      * main program entry to test methods of BookStore
-     * @param args from cli
+     * @param args - The arguments from cli
      */
     public static void main(final String[] args)
     {

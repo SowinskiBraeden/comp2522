@@ -54,7 +54,7 @@ public class Novel
 
     /**
      * compareTo to sort novels based on title
-     * @param novel to compare to
+     * @param novel - The novel object to compare to
      * @return number value of comparison, i.e. >1, 0, <1
      */
     @Override
