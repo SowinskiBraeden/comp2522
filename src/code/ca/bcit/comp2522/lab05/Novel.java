@@ -7,6 +7,8 @@ package ca.bcit.comp2522.lab05;
  * @author Braeden Sowinski
  * @author Nico Agostini
  * @author Trishaan Shetty
+ * @author Calvin Arifianto
+ * @version 1.0.0
  */
 public class Novel
         implements Comparable<Novel>

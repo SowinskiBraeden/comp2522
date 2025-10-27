@@ -6,6 +6,7 @@ package ca.bcit.comp2522.lab05;
  * @author Braeden Sowinski
  * @author Trishaan Shetty
  * @author Nico Agostini
+ * @author Calvin Arifianto
  * @version 1.0.0
  */
 public class Validator {

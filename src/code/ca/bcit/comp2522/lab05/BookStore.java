@@ -15,18 +15,20 @@ import java.util.Iterator;
  * @author Braeden Sowinski
  * @author Trishaan Shetty
  * @author Nico Agostini
+ * @author Calvin Arifianto
  * @version 1.0.0
  */
-public class BookStore {
-    private static final int DECADE_RANGE = 9;
+public class BookStore
+{
+    private static final int DECADE_RANGE          = 9;
     private static final int DEFAULT_LONGEST_VALUE = 0;
-    private static final int TO_PERCENTAGE = 100;
+    private static final int TO_PERCENTAGE         = 100;
 
     private final String bookStoreName;
     private final List<Novel> novels;
 
     /**
-     * BookStore constructor creats a bookstore, and tests
+     * BookStore constructor creates a bookstore, and tests
      * hash maps and iterators
      * @param bookStoreName - The bookStoreName to call bookstore
      */
@@ -140,11 +142,11 @@ public class BookStore {
         novels.add(new Novel("Wide Sargasso Sea", "Jean Rhys", 1966));
 
         final Map<String, Novel> novelsMap;
-        final Set<String> keySet;
-        final List<String> keyList;
-        final Iterator<String> iter;
+        final Set<String>        keySet;
+        final List<String>       keyList;
+        final Iterator<String>   iter;
 
-        novelsMap = new HashMap<String, Novel>();
+        novelsMap = new HashMap<>();
 
         for (final Novel novel : this.novels) {
             novelsMap.put(novel.getTitle(), novel);
@@ -213,8 +215,11 @@ public class BookStore {
      */
     public void printGroupByDecade(final int decade)
     {
-        for (final Novel novel : this.novels) {
-            if (novel.getYearPublished() >= decade && novel.getYearPublished() <= decade + DECADE_RANGE) {
+        for (final Novel novel : this.novels)
+        {
+            if (novel.getYearPublished() >= decade &&
+                novel.getYearPublished() <= decade + DECADE_RANGE)
+            {
                 System.out.println(novel.getTitle());
             }
         }
@@ -234,7 +239,7 @@ public class BookStore {
         for (final Novel novel : this.novels) {
             if (novel.getTitle().length() > longest) {
                 longest = novel.getTitle().length();
-                title =  novel.getTitle();
+                title = novel.getTitle();
             }
         }
 
@@ -294,7 +299,8 @@ public class BookStore {
         inRange = DEFAULT_LONGEST_VALUE;
 
         for  (final Novel novel : this.novels) {
-            if (novel.getYearPublished() >= first && novel.getYearPublished() <= last) {
+            if (novel.getYearPublished() >= first &&
+                novel.getYearPublished() <= last) {
                 inRange++;
             }
         }

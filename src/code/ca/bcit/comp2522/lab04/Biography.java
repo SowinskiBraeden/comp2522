@@ -18,8 +18,8 @@ public class Biography
 
     /**
      * Biography constructor
-     * @param title String title of Biography
-     * @param year int Year Biography was published
+     * @param title  title of Biography
+     * @param year  Year Biography was published
      * @param author Author of the Biography
      * @param subject Person that the Biography is about
      */
