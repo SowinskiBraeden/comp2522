@@ -43,8 +43,7 @@ public class Autobiography extends Biography implements Printable
         builder.append(" - Author: ");
         builder.append(this.author.getFullName());
         builder.append(" - Subject: ");
-        builder.append(this.subject.getFullName());
-
+        builder.append(this.getSubject().getFullName());
 
         System.out.println(builder.toString());
     }
