@@ -16,9 +16,9 @@ public class Autobiography
 {
     /**
      * Autobiography constructor
-     * @param title of autobiography
-     * @param year published
-     * @param author and subject of autobiography
+     * @param title String title of autobiography
+     * @param year int year Autobiography was published
+     * @param author Author and subject of autobiography
      */
     public Autobiography(
         final String title,

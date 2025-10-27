@@ -16,8 +16,8 @@ public final class Validator
     /**
      * validateString ensures a string is not empty, blank,
      * null or greater than maxLength
-     * @param string to validate
-     * @param maxLength that string can be
+     * @param string String to validate
+     * @param maxLength int max length that string can be
      */
     public static void validateString(final String string, final int maxLength) {
         if (string == null || string.isEmpty()) {
@@ -31,7 +31,7 @@ public final class Validator
 
     /**
      * validateObject ensures a given object is not null
-     * @param object to ensure is not null
+     * @param object Object to ensure is not null
      * @param objectName variable name of object for log
      */
     public static void validateObject(
@@ -46,9 +46,9 @@ public final class Validator
     /**
      * validateInteger ensures a given number is within
      * the correct provided range
-     * @param number to validate
-     * @param min of range inclusive
-     * @param max of range inclusive
+     * @param number int to validate
+     * @param min minimum int of range inclusive
+     * @param max maximum int of range inclusive
      */
     public static void validateInteger(
         final int number,

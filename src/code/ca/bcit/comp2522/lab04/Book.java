@@ -27,9 +27,9 @@ public class Book
 
     /**
      * Book constructor
-     * @param title of the book
-     * @param year the book was published
-     * @param author of the book
+     * @param title String title of the book
+     * @param year int year the book was published
+     * @param author Author of the book
      */
     public Book(
         final String title,
@@ -83,7 +83,7 @@ public class Book
     /**
      * compareTo another book, books are equal if they are written in the same
      * year
-     * @param other book to compare to
+     * @param other Book to compare to
      * @return if the given book is older, newer or same age as this book
      */
     @Override

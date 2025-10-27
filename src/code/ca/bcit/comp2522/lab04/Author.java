@@ -20,10 +20,10 @@ public class Author
 
     /**
      * Author constructor
-     * @param name of the author
-     * @param dateOfBirth of the author
-     * @param dateOfDeath of author if they did die (can be null)
-     * @param genre that the author writes in
+     * @param name Name of the author
+     * @param dateOfBirth Date of birth of the author
+     * @param dateOfDeath Date of death of author if they did die (can be null)
+     * @param genre String representing the genre that the author writes in
      */
     public Author(
         final Name   name,

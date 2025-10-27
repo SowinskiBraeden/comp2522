@@ -18,10 +18,10 @@ public class Biography
 
     /**
      * Biography constructor
-     * @param title of Biography
-     * @param year published
-     * @param author of Biography
-     * @param subject that the Biography is about
+     * @param title String title of Biography
+     * @param year int Year Biography was published
+     * @param author Author of the Biography
+     * @param subject Person that the Biography is about
      */
     public Biography(
         final String title,
@@ -38,7 +38,7 @@ public class Biography
 
     /**
      * equals checks if a given object is equal to this object
-     * @param o   the reference object with which to compare.
+     * @param o Object to check if it is equal to this.
      * @return if the given object is equal
      */
     @Override
