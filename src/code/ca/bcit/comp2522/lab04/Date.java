@@ -76,6 +76,10 @@ public final class Date implements Printable, Comparable<Date>
     private final int month;
     private final int day;
 
+    private static final int LESS_THAN        = -1;
+    private static final int GREATER_THAN     = 1;
+    private static final int EQUALS           = 0;
+
     /*
         isLeapYear calculates if a given year is a leap year or not.
 
@@ -354,7 +358,7 @@ public final class Date implements Printable, Comparable<Date>
         } else if (this.year < YEAR_NINETEEN_HUNDREDS) {
             step0 = CENTURY_CODE_YEAR_EIGHTEEN_HUNDREDS;
         } else {
-            step0 = 0;
+            step0 = EQUALS;
         }
 
         step1 = year / DIVISION_BY_TWELVE;
@@ -401,23 +405,23 @@ public final class Date implements Printable, Comparable<Date>
     public int compareTo(final Date other)
     {
         if (this.year < other.year) {
-            return -1;
+            return LESS_THAN;
         } else if (this.year > other.year) {
-            return 1;
+            return GREATER_THAN;
         }
 
         if (this.month < other.month) {
-            return -1;
+            return LESS_THAN;
         } else if (this.month > other.month) {
-            return 1;
+            return GREATER_THAN;
         }
 
         if (this.day < other.day) {
-            return -1;
+            return LESS_THAN;
         } else if (this.day > other.day) {
-            return 1;
+            return GREATER_THAN;
         }
 
-        return 0; // years, months, and days are all equal
+        return EQUALS; // years, months, and days are all equal
     }
 }
