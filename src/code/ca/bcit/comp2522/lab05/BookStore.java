@@ -28,7 +28,7 @@ public class BookStore {
     /**
      * BookStore constructor creats a bookstore, and tests
      * hash maps and iterators
-     * @param bookStoreName to call bookstore
+     * @param bookStoreName - The bookStoreName to call bookstore
      */
     public BookStore(
         final String bookStoreName
@@ -182,7 +182,7 @@ public class BookStore {
 
     /**
      * printBoolTitle of all books containing the input string
-     * @param title that book matches or contains
+     * @param title - The title that book matches or contains
      */
     public void printBookTitle(final String title)
     {
@@ -209,7 +209,7 @@ public class BookStore {
     /**
      * printGroupByDecade prints any books within a given decade
      * e.g. 2000-2009
-     * @param decade to find books published in
+     * @param decade - The decade to find books published within
      */
     public void printGroupByDecade(final int decade)
     {
@@ -244,7 +244,7 @@ public class BookStore {
     /**
      * isThereABookWrittenIn checks if any books were written in
      * a given year
-     * @param year to check for books
+     * @param year - The year to check for books
      * @return if any books were published in a given year
      */
     public boolean isThereABookWrittenIn(final int year)
@@ -259,7 +259,7 @@ public class BookStore {
 
     /**
      * howManyBooksContain a given word
-     * @param word to check how many books contain it
+     * @param word - The word to check how many books contain it
      * @return the number of books containing the word
      */
     public int howManyBooksContain(final String word)
@@ -281,8 +281,8 @@ public class BookStore {
      * whichPercentWrittenBetween gives the percent
      * of books from all books that were written
      * between two given years
-     * @param first year book can be checked in
-     * @param last year book can be checked in
+     * @param first - The first year book can be checked in
+     * @param last - The last year book can be checked in
      * @return the percent of books written between first year and last year
      */
     public float whichPercentWrittenBetween(
@@ -347,7 +347,7 @@ public class BookStore {
 
     /**
      * main program entry to test methods of BookStore
-     * @param args form cli
+     * @param args from cli
      */
     public static void main(final String[] args)
     {
