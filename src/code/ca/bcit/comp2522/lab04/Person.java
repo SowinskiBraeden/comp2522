@@ -24,9 +24,9 @@ public class Person
 
     /**
      * Person construct
-     * @param dateOfBirth of person, cannot be null
-     * @param dateOfDeath of person, can be null
-     * @param name of person
+     * @param dateOfBirth Date of birth of person, cannot be null
+     * @param dateOfDeath Date of death of person, can be null
+     * @param name name of the person
      */
     public Person(
         final Date dateOfBirth,
@@ -94,7 +94,7 @@ public class Person
 
     /**
      * compareTo another person based on date of birth
-     * @param other person to compare
+     * @param other Person to compare to
      * @return if a person is older, younger or same age
      */
     @Override
@@ -104,7 +104,7 @@ public class Person
 
     /**
      * equals checks if another given object is equal to this object
-     * @param o   the reference object with which to compare.
+     * @param o Object to check if equal to this
      * @return if given object are equals
      */
     public boolean equals(final Object o) {

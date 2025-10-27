@@ -20,8 +20,8 @@ public class Name
 
     /**
      * Name constructor
-     * @param first name to save
-     * @param last name to save
+     * @param first name of the person
+     * @param last name of the person
      */
     public Name(final String first, final String last)
     {
