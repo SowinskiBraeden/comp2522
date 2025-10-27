@@ -11,7 +11,7 @@ package ca.bcit.comp2522.lab05;
  * @version 1.0.0
  */
 public class Novel
-        implements Comparable<Novel>
+    implements Comparable<Novel>
 {
     private final String title;
     private final String authorName;
@@ -23,11 +23,10 @@ public class Novel
      * @param authorName - The authorName of the novel
      * @param yearPublished - The year published of the novel
      */
-    public Novel(
-        final String title,
-        final String authorName,
-        final int    yearPublished
-    ) {
+    public Novel(final String title,
+                 final String authorName,
+                 final int    yearPublished)
+    {
         Validator.validateString(title);
         Validator.validateString(authorName);
 
@@ -40,19 +39,28 @@ public class Novel
      * getTitle of the novel
      * @return title of the novel
      */
-    public String getTitle() { return this.title; }
+    public String getTitle()
+    {
+        return this.title;
+    }
 
     /**
      * getAuthorName of the novel
      * @return author name of the novel
      */
-    public String getAuthorName() { return this.authorName; }
+    public String getAuthorName()
+    {
+        return this.authorName;
+    }
 
     /**
      * getYearPublished of the novel
      * @return novel year published
      */
-    public int getYearPublished() { return this.yearPublished; }
+    public int getYearPublished()
+    {
+        return this.yearPublished;
+    }
 
     /**
      * compareTo to sort novels based on title
@@ -60,7 +68,8 @@ public class Novel
      * @return number value of comparison, i.e. >1, 0, <1
      */
     @Override
-    public int compareTo(final Novel novel) {
+    public int compareTo(final Novel novel)
+    {
         return this.title.compareTo(novel.getTitle());
     }
 
@@ -70,7 +79,8 @@ public class Novel
      * @return the string representation of novel attributes
      */
     @Override
-    public String toString() {
+    public String toString()
+    {
         final StringBuilder builder;
         builder = new StringBuilder();
 

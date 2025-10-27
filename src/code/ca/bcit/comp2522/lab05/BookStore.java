@@ -32,9 +32,8 @@ public class BookStore
      * hash maps and iterators
      * @param bookStoreName - The bookStoreName to call bookstore
      */
-    public BookStore(
-        final String bookStoreName
-    ) {
+    public BookStore(final String bookStoreName)
+    {
         Validator.validateString(bookStoreName);
 
         this.bookStoreName = bookStoreName;
@@ -148,7 +147,8 @@ public class BookStore
 
         novelsMap = new HashMap<>();
 
-        for (final Novel novel : this.novels) {
+        for (final Novel novel : this.novels)
+        {
             novelsMap.put(novel.getTitle(), novel);
         }
 
@@ -160,14 +160,18 @@ public class BookStore
 
         while (iter.hasNext())
         {
-            final String key = iter.next();
-            if (key.toLowerCase().contains("the")) {
+            final String key;
+            key = iter.next();
+
+            if (key.toLowerCase().contains("the"))
+            {
                 novelsMap.remove(key);
             }
         }
 
         System.out.println("Sorted and cleaned novels:");
-        for (final Novel novel : novelsMap.values()) {
+        for (final Novel novel : novelsMap.values())
+        {
             System.out.println(novel);
         }
     }
@@ -177,7 +181,8 @@ public class BookStore
      */
     public void printAllTitles()
     {
-        for (final Novel novel : this.novels) {
+        for (final Novel novel : this.novels)
+        {
             System.out.println(novel.getTitle().toUpperCase());
         }
     }
@@ -188,8 +193,10 @@ public class BookStore
      */
     public void printBookTitle(final String title)
     {
-        for (final Novel novel : this.novels) {
-            if (novel.getTitle().toLowerCase().contains(title.toLowerCase())) {
+        for (final Novel novel : this.novels)
+        {
+            if (novel.getTitle().toLowerCase().contains(title.toLowerCase()))
+            {
                 System.out.println(novel.getTitle());
             }
         }
@@ -203,7 +210,8 @@ public class BookStore
     {
         Collections.sort(this.novels);
 
-        for (final Novel novel : this.novels) {
+        for (final Novel novel : this.novels)
+        {
             System.out.println(novel.getTitle());
         }
     }
@@ -236,8 +244,10 @@ public class BookStore
         longest = DEFAULT_LONGEST_VALUE;
         title = "";
 
-        for (final Novel novel : this.novels) {
-            if (novel.getTitle().length() > longest) {
+        for (final Novel novel : this.novels)
+        {
+            if (novel.getTitle().length() > longest)
+            {
                 longest = novel.getTitle().length();
                 title = novel.getTitle();
             }
@@ -254,11 +264,14 @@ public class BookStore
      */
     public boolean isThereABookWrittenIn(final int year)
     {
-        for (final Novel novel : this.novels) {
-            if (novel.getYearPublished() == year) {
+        for (final Novel novel : this.novels)
+        {
+            if (novel.getYearPublished() == year)
+            {
                 return true;
             }
         }
+
         return false;
     }
 
@@ -273,8 +286,12 @@ public class BookStore
 
         count = DEFAULT_LONGEST_VALUE;
 
-        for (final Novel novel : this.novels) {
-            if (novel.getTitle().toLowerCase().contains(word.toLowerCase())) {
+        for (final Novel novel : this.novels)
+        {
+            if (novel.getTitle()
+                     .toLowerCase()
+                     .contains(word.toLowerCase()))
+            {
                 count++;
             }
         }
@@ -291,16 +308,18 @@ public class BookStore
      * @return the percent of books written between first year and last year
      */
     public float whichPercentWrittenBetween(
-            final int first,
-            final int last
+        final int first,
+        final int last
     ) {
         int inRange;
 
         inRange = DEFAULT_LONGEST_VALUE;
 
-        for  (final Novel novel : this.novels) {
+        for  (final Novel novel : this.novels)
+        {
             if (novel.getYearPublished() >= first &&
-                novel.getYearPublished() <= last) {
+                novel.getYearPublished() <= last)
+            {
                 inRange++;
             }
         }
@@ -318,11 +337,16 @@ public class BookStore
 
         oldest = null;
 
-        for (final Novel novel : this.novels) {
-            if (oldest == null) {
+        for (final Novel novel : this.novels)
+        {
+            if (oldest == null)
+            {
                 oldest = novel;
-            } else {
-                if (novel.getYearPublished() < oldest.getYearPublished()) {
+            }
+            else
+            {
+                if (novel.getYearPublished() < oldest.getYearPublished())
+                {
                     oldest = novel;
                 }
             }
@@ -337,13 +361,16 @@ public class BookStore
      * @param titleLength - The title length to compare books to
      * @return list of books matching given title length
      */
-    public List<Novel> getBooksThisLength(final int titleLength) {
+    public List<Novel> getBooksThisLength(final int titleLength)
+    {
         final List<Novel> booksOfLength;
 
         booksOfLength = new ArrayList<>();
 
-        for (final Novel novel : this.novels) {
-            if (novel.getTitle().length() == titleLength) {
+        for (final Novel novel : this.novels)
+        {
+            if (novel.getTitle().length() == titleLength)
+            {
                 booksOfLength.add(novel);
             }
         }

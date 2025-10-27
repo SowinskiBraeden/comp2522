@@ -9,16 +9,18 @@ package ca.bcit.comp2522.lab05;
  * @author Calvin Arifianto
  * @version 1.0.0
  */
-public class Validator {
+public class Validator
+{
     /**
      * validateString ensures string input is not null or empty
      * @param str - The String to validate
      * @throws IllegalArgumentException if invalid string
      */
     public static void validateString(final String str)
-            throws IllegalArgumentException
+        throws IllegalArgumentException
     {
-        if (str == null || str.isEmpty()) {
+        if (str == null || str.isEmpty())
+        {
             throw new IllegalArgumentException("String cannot be null or empty");
         }
     }
