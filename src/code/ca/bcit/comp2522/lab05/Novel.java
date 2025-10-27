@@ -14,19 +14,6 @@ public class Novel implements Comparable<Novel> {
     private final int    yearPublished;
 
     /**
-     * validateString ensures given string is not null or empty
-     * @param str to validate
-     * @throws IllegalArgumentException if invlalid string
-     */
-    private static void validateString(final String str)
-        throws IllegalArgumentException
-    {
-        if (str == null || str.isEmpty()) {
-            throw new IllegalArgumentException("String cannot be null or empty");
-        }
-    }
-
-    /**
      * Novel constructor
      * @param title of novel
      * @param authorName of the novel
@@ -37,8 +24,8 @@ public class Novel implements Comparable<Novel> {
         final String authorName,
         final int    yearPublished
     ) {
-        validateString(title);
-        validateString(authorName);
+        Validator.validateString(title);
+        Validator.validateString(authorName);
 
         this.title = title;
         this.authorName = authorName;
@@ -59,7 +46,7 @@ public class Novel implements Comparable<Novel> {
 
     /**
      * getYearPublished of the novel
-     * @return novel yearh published
+     * @return novel year published
      */
     public int getYearPublished() { return this.yearPublished; }
 

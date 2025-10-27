@@ -24,19 +24,6 @@ public class BookStore {
     private final List<Novel> novels;
 
     /**
-     * validateString ensures string input is not null or empty
-     * @param str to validate
-     * @throws IllegalArgumentException if invalid string
-     */
-    private static void validateString(final String str)
-            throws IllegalArgumentException
-    {
-        if (str == null || str.isEmpty()) {
-            throw new IllegalArgumentException("String cannot be null or empty");
-        }
-    }
-
-    /**
      * BookStore constructor creats a bookstore, and tests
      * hash maps and iterators
      * @param bookStoreName to call bookstore
@@ -44,7 +31,7 @@ public class BookStore {
     public BookStore(
         final String bookStoreName
     ) {
-        validateString(bookStoreName);
+        Validator.validateString(bookStoreName);
 
         this.bookStoreName = bookStoreName;
         this.novels = new ArrayList<>();
