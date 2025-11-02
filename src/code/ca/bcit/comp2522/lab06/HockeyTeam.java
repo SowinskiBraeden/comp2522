@@ -15,11 +15,13 @@ public class HockeyTeam {
         }
     }
 
-    public HockeyTeam(final String name) {
+    public HockeyTeam(final String name,
+                      final List<HockeyPlayer> roster) {
+
         validateString(name);
 
-       this.name = name;
-        this.roster = new ArrayList<>();
+        this.name =   name;
+        this.roster = roster;
     }
 
     public String getName() {
