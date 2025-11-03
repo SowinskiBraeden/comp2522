@@ -238,22 +238,28 @@ public class BookStore
      */
     public void getLongest()
     {
-        String title;
-        int longest;
-
-        longest = DEFAULT_LONGEST_VALUE;
-        title = "";
+        Novel longest;
+        longest = null;
 
         for (final Novel novel : this.novels)
         {
-            if (novel.getTitle().length() > longest)
+            if (longest == null)
             {
-                longest = novel.getTitle().length();
-                title = novel.getTitle();
+                longest = novel;
+            }
+            else
+            {
+                if (novel.getTitle().length() > longest.getTitle().length())
+                {
+                    longest = novel;
+                }
             }
         }
 
-        System.out.println(title);
+        if (longest != null)
+        {
+            System.out.println(longest.getTitle());
+        }
     }
 
     /**

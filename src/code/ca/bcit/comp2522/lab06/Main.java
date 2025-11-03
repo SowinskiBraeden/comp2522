@@ -4,7 +4,11 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
-import java.util.function.*;
+import java.util.function.Consumer;
+import java.util.function.Function;
+import java.util.function.Predicate;
+import java.util.function.Supplier;
+import java.util.function.UnaryOperator;
 
 /**
  * Demonstrates the use of the HockeyPlayer and HockeyTeam classes along with
@@ -25,10 +29,10 @@ public class Main
     private static final int CURRENT_YEAR = 2025;
     private static final int HIGH_SCORE_THRESHOLD = 20;
     private static final String FORWARD_POSITION = "F";
-    private static final int MIN_AGE = 21;
+    private static final int MIN_AGE_YEARS = 21;
     private static final int MIN_GOALS = 10;
     private static final int COUNTER_STARTER = 0;
- 
+
     /**
      * Creates and returns a sample hockey team with several HockeyPlayer objects.
      *
@@ -84,10 +88,10 @@ public class Main
             }
         }
 
-        // FUNCTION — transform a HockeyPlayer into a formatted string
+        // FUNCTION — transform a HockeyPlayer into a formatted string; e.g.
         final Function<HockeyPlayer, String> playerFunction =
-                (p) -> p.getPlayerName() + " — " + p.getPosition()
-                        + " (" + p.getGoals() + " goals)";
+                (p) -> p.getPlayerName() + " — " + p.getPosition() +
+                        " (" + p.getGoals() + " goals)";
 
         for (final HockeyPlayer p : roster)
         {
@@ -133,12 +137,12 @@ public class Main
         // FUNCTIONAL INTERFACE (EligibilityRule)
         // A player is eligible if age >= minAge AND goals >= minGoals
         final EligibilityRule rule =
-                (p) -> ((CURRENT_YEAR - p.getYearOfBirth()) >= MIN_AGE)
+                (p) -> ((CURRENT_YEAR - p.getYearOfBirth()) >= MIN_AGE_YEARS)
                         && (p.getGoals() >= MIN_GOALS);
 
-        System.out.println("Eligible players (age >= "
-                + MIN_AGE + ", goals >= "
-                + MIN_GOALS + "):");
+        System.out.println("Eligible players (age >= " +
+                MIN_AGE_YEARS + ", goals >= " +
+                MIN_GOALS + "):");
 
         for (final HockeyPlayer p : roster)
         {
