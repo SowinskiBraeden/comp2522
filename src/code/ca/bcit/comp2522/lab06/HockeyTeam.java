@@ -3,6 +3,17 @@ package ca.bcit.comp2522.lab06;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * HockeyTeam holds information of a
+ * hockey team composed by HockeyPlayers and the team's name.
+ *
+ * @author Braeden Sowinski
+ * @author Nico Agostini
+ * @author Trishaan Shetty
+ * @author Calvin Arifianto
+ * @version 1.0.0
+ */
+
 public class HockeyTeam {
     private final String name;
     private final List<HockeyPlayer> roster;

@@ -6,6 +6,15 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.function.*;
 
+/**
+ * Main class to instantiate and test the HockeyPlayer and HockeyTeam class.
+ *
+ * @author Braeden Sowinski
+ * @author Nico Agostini
+ * @author Trishaan Shetty
+ * @author Calvin Arifianto
+ * @version 1.0.0
+ */
 
 public class Main {
 
