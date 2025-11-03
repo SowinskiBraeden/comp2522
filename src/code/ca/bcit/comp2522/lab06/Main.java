@@ -7,21 +7,36 @@ import java.util.List;
 import java.util.function.*;
 
 /**
- * Main class to instantiate and test the HockeyPlayer and HockeyTeam class.
+ * Demonstrates the use of the HockeyPlayer and HockeyTeam classes along with
+ * functional programming concepts such as Supplier, Predicate, Function,
+ * Consumer, UnaryOperator, and Comparator.
  *
- * @author Braeden Sowinski
+ * <p>This class creates a sample team, performs various operations
+ * using functional interfaces, and prints the results to the console.</p>
+ *
  * @author Nico Agostini
+ * @author Braeden Sowinski
  * @author Trishaan Shetty
  * @author Calvin Arifianto
  * @version 1.0.0
  */
-
-public class Main {
-
+public class Main
+{
+    private static final int CURRENT_YEAR = 2025;
+    private static final int HIGH_SCORE_THRESHOLD = 20;
+    private static final String FORWARD_POSITION = "F";
+    private static final int MIN_AGE = 21;
+    private static final int MIN_GOALS = 10;
+    private static final int COUNTER_STARTER = 0;
+ 
+    /**
+     * Creates and returns a sample hockey team with several HockeyPlayer objects.
+     *
+     * @return a HockeyTeam instance representing a sample team
+     */
     private static HockeyTeam sampleTeam()
     {
         final List<HockeyPlayer> ps;
-
         ps = new ArrayList<>();
 
         ps.add(new HockeyPlayer("Alex Morgan", "F", 2002, 21));
@@ -33,112 +48,99 @@ public class Main {
         return new HockeyTeam("BCIT Blizzards", ps);
     }
 
-    public static void main(final String[] args) {
+    /**
+     * The program entry point. Demonstrates creation and manipulation
+     * of HockeyPlayer and HockeyTeam objects, as well as use of various
+     * Java functional interfaces.
+     *
+     * <p>This method showcases examples of Supplier, Predicate, Function,
+     * Consumer, UnaryOperator, and Comparator applied to HockeyPlayer objects.</p>
+     *
+     * @param args command-line arguments (not used)
+     */
+    public static void main(final String[] args)
+    {
+        final HockeyTeam team;
+        final List<HockeyPlayer> roster;
+        team = sampleTeam();
+        roster = team.getRoster();
 
-        final int CURRENT_YEAR = 2025;
-        final int TWENTY_GOALS = 20;
-        final String FORWARD_POSITION = "F";
-        final int MIN_AGE = 21;
-        final int MIN_GOALS = 10;
-        final int COUNTER_STARTER = 0;
-
-
-        final HockeyTeam team = sampleTeam();
-        final List<HockeyPlayer> roster = team.getRoster();
-
-
-        //  SUPPLIER
-
-        Supplier<HockeyPlayer> callUpSupplier = () ->
-                new HockeyPlayer("John Doe","F",1998,2);
-
+        // SUPPLIER — creates a new player on demand
+        final Supplier<HockeyPlayer> callUpSupplier =
+                () -> new HockeyPlayer("John Doe", "F", 1998, 2);
         roster.add(callUpSupplier.get());
 
+        // PREDICATE — filter players who are forwards and high scorers
+        final Predicate<HockeyPlayer> isForward =
+                (p) -> p.getPosition().equalsIgnoreCase(FORWARD_POSITION);
+        final Predicate<HockeyPlayer> highScore =
+                (p) -> p.getGoals() >= HIGH_SCORE_THRESHOLD;
 
-        //  PREDICATE
-
-        Predicate<HockeyPlayer> isForward = hockeyPlayer -> hockeyPlayer.getPosition().equals(FORWARD_POSITION);
-        Predicate<HockeyPlayer> has20Plus = hockeyPlayer -> hockeyPlayer.getGoals() >= TWENTY_GOALS;
-
-        for (HockeyPlayer p : roster) {
-            if (isForward.and(has20Plus).test(p)) {
+        for (final HockeyPlayer p : roster)
+        {
+            if (isForward.and(highScore).test(p))
+            {
                 System.out.println(p);
             }
         }
 
+        // FUNCTION — transform a HockeyPlayer into a formatted string
+        final Function<HockeyPlayer, String> playerFunction =
+                (p) -> p.getPlayerName() + " — " + p.getPosition()
+                        + " (" + p.getGoals() + " goals)";
 
-        //  FUNCTION
-
-        Function<HockeyPlayer, String> playerFunction =
-                p -> p.getPlayerName() + " — " + p.getPosition()
-                        + " (" + p.getGoals()
-                        + " goals)";
-
-        for (HockeyPlayer p : roster)
+        for (final HockeyPlayer p : roster)
         {
-            String label = playerFunction.apply(p);
-            System.out.println(label);
+            System.out.println(playerFunction.apply(p));
         }
 
-
-        //  CONSUMER
-
-        Consumer<HockeyPlayer> hockeyPlayerConsumer =
-                hockeyPlayer -> System.out.println(hockeyPlayer.getPlayerName());
+        // CONSUMER — process and print player names
+        final Consumer<HockeyPlayer> hockeyPlayerConsumer =
+                (p) -> System.out.println(p.getPlayerName());
 
         for (final HockeyPlayer hockeyPlayer : roster)
         {
             hockeyPlayerConsumer.accept(hockeyPlayer);
         }
 
-
-        //  UNARY OPERATOR
-
-        UnaryOperator<String> toUpper = stringInput -> stringInput.toUpperCase();
+        // UNARY OPERATOR — convert player names to uppercase
+        final UnaryOperator<String> toUpper = (stringInput) -> stringInput.toUpperCase();
 
         for (final HockeyPlayer hockeyPlayer : roster)
         {
             System.out.println(toUpper.apply(hockeyPlayer.getPlayerName()));
         }
 
-
-        //  COMPARATOR - sort by goals DESC (no chaining)
-
-        Comparator<HockeyPlayer> byGoalsDesc =
+        // COMPARATOR — sort players by goals in descending order
+        final Comparator<HockeyPlayer> byGoalsDesc =
                 (a, b) -> Integer.compare(b.getGoals(), a.getGoals());
         Collections.sort(roster, byGoalsDesc);
 
         System.out.println("Sorted by goals (DESC):");
-
         for (final HockeyPlayer p : roster)
         {
-            System.out.println(p.getPlayerName()
-                    + " - " + p.getGoals());
+            System.out.println(p.getPlayerName() + " - " + p.getGoals());
         }
 
-
-
-        //  AGGREGATION (loop) — total goals
-
-        int totalGoals = COUNTER_STARTER; // 0
+        // AGGREGATION — calculate total goals on the roster
+        int totalGoals = COUNTER_STARTER;
         for (final HockeyPlayer p : roster)
         {
             totalGoals += p.getGoals();
         }
         System.out.println("Total goals on roster: " + totalGoals);
 
-
         // FUNCTIONAL INTERFACE (EligibilityRule)
         // A player is eligible if age >= minAge AND goals >= minGoals
-
-        EligibilityRule rule = p ->
-                ((CURRENT_YEAR - p.getYearOfBirth()) >= MIN_AGE)
+        final EligibilityRule rule =
+                (p) -> ((CURRENT_YEAR - p.getYearOfBirth()) >= MIN_AGE)
                         && (p.getGoals() >= MIN_GOALS);
 
         System.out.println("Eligible players (age >= "
                 + MIN_AGE + ", goals >= "
                 + MIN_GOALS + "):");
-        for (HockeyPlayer p : roster)
+
+        for (final HockeyPlayer p : roster)
         {
             if (rule.isEligible(p))
             {
