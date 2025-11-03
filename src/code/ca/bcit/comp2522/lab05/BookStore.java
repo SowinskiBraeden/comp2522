@@ -260,6 +260,10 @@ public class BookStore
         {
             System.out.println(longest.getTitle());
         }
+        else
+        {
+            System.out.println("No longest title found");
+        }
     }
 
     /**
