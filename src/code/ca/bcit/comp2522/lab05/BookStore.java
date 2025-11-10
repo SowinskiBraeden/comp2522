@@ -256,13 +256,13 @@ public class BookStore
             }
         }
 
-        if (longest != null)
+        if (longest == null)
         {
-            System.out.println(longest.getTitle());
+            System.out.println("No longest title found");
         }
         else
         {
-            System.out.println("No longest title found");
+            System.out.println(longest.getTitle());
         }
     }
 
@@ -353,12 +353,14 @@ public class BookStore
             {
                 oldest = novel;
             }
+            else if (novel.getYearPublished() < oldest.getYearPublished())
+            {
+                oldest = novel;
+            }
             else
             {
-                if (novel.getYearPublished() < oldest.getYearPublished())
-                {
-                    oldest = novel;
-                }
+                // nothing to do
+                throw new IllegalArgumentException("CRASH");
             }
         }
 
