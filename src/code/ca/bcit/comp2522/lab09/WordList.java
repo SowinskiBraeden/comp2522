@@ -50,7 +50,9 @@ public class WordList
      */
     public String getRandomWord()
     {
-        final Random rand = new Random();
+        final Random rand;
+
+        rand = new Random();
 
         return this.wordList.get(rand.nextInt(this.wordList.size()));
     }
