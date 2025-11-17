@@ -1,14 +1,12 @@
 package ca.bcit.comp2522.lab09;
 
 import java.io.BufferedReader;
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-import java.util.Scanner;
 
 /**
  * Loads a list of words from a text file and provides random selection.
