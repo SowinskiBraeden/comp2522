@@ -1,7 +1,10 @@
 package ca.bcit.comp2522.lab09;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -26,21 +29,21 @@ public class WordList
      * @throws FileNotFoundException if the file cannot be opened.
      */
     public WordList(final String filePath)
-        throws FileNotFoundException
+        throws IOException
     {
         this.wordList = new ArrayList<>();
 
-        final Scanner fileScanner;
-        final File file = new File(filePath);
+        final BufferedReader reader;
 
-        fileScanner = new Scanner(file);
+        reader = new BufferedReader(new FileReader(filePath));
 
-        while (fileScanner.hasNextLine())
+        String line;
+        while((line = reader.readLine()) != null)
         {
-            this.wordList.add(fileScanner.nextLine());
+            this.wordList.add(line);
         }
 
-        fileScanner.close();
+        reader.close();
     }
 
     /**
