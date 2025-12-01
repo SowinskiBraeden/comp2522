@@ -22,6 +22,18 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
+/**
+ * A timed quiz application that loads questions from an external file
+ * and presents them to the user in randomized order. The user has a
+ * limited amount of time to answer a fixed number of questions.
+ * Final results are shown when time expires or all questions are answered.
+ *
+ * @author Braeden Sowinski
+ * @author Nico Agostini
+ * @author Trishaan Shetty
+ * @author Calvin Arifianto
+ * @version 1.0.0
+ */
 public class Quiz extends Application
 {
     private static final int WIDTH           = 800;
@@ -48,7 +60,6 @@ public class Quiz extends Application
 
     private Timeline timeline;
 
-    // UI
     private VBox root;
     private Label questionLabel;
     private Label feedbackLabel;
@@ -58,6 +69,11 @@ public class Quiz extends Application
     private Button startButton;
     private Button playAgainButton;
 
+    /**
+     * Reads and loads quiz questions from a file.
+     *
+     * @param path the path to the quiz data file
+     */
     private void readQuestions(final Path path)
     {
         if (!questions.isEmpty())
@@ -74,7 +90,6 @@ public class Quiz extends Application
                 final String[] parts = line.split(DELIMITER);
                 if (parts.length < MIN_LENGTH)
                 {
-                    // Skip lines
                     continue;
                 }
 
@@ -97,10 +112,14 @@ public class Quiz extends Application
         }
     }
 
+    /**
+     * Initializes the UI and starts the JavaFX application.
+     *
+     * @param stage the primary stage
+     */
     @Override
     public void start(final Stage stage)
     {
-
         root = new VBox();
         root.setPrefSize(WIDTH, HEIGHT);
 
@@ -115,7 +134,6 @@ public class Quiz extends Application
         startButton = new Button("Start quiz");
         playAgainButton = new Button("Play again");
 
-        // Initial UI state: game not started yet
         answerField.setDisable(true);
         submitButton.setDisable(true);
         playAgainButton.setDisable(true);
@@ -149,7 +167,6 @@ public class Quiz extends Application
         }
 
         final Runnable submitAction = () -> {
-            // If game is not running
             if (current == null)
             {
                 return;
@@ -174,18 +191,13 @@ public class Quiz extends Application
                 wrongCount++;
             }
 
-            // One chance per question: move immediately to next
             currentQuestionIndex++;
             showNextQuestion();
         };
 
         submitButton.setOnAction(event -> submitAction.run());
         answerField.setOnAction(event -> submitAction.run());
-
-        // Start quiz button
         startButton.setOnAction(event -> startGame());
-
-        // Play again button (same as start, but different state)
         playAgainButton.setOnAction(event -> startGame());
 
         stage.setScene(scene);
@@ -193,13 +205,17 @@ public class Quiz extends Application
         stage.show();
     }
 
+    /**
+     * Starts a new quiz round, resets counters, shuffles questions,
+     * and initializes the timer.
+     */
     private void startGame()
     {
-
         correctCount = COUNTER_STARTER;
         wrongCount   = COUNTER_STARTER;
         remainingSeconds = START_TIME_SECS;
         currentQuestionIndex = COUNTER_STARTER;
+
         feedbackLabel.setText("");
         questionLabel.setText("");
 
@@ -211,7 +227,6 @@ public class Quiz extends Application
             quizQuestions = new ArrayList<>(quizQuestions.subList(COUNTER_STARTER, NUM_QUESTIONS));
         }
 
-        // Timer
         if (timeline != null)
         {
             timeline.stop();
@@ -237,13 +252,14 @@ public class Quiz extends Application
         playAgainButton.setDisable(true);
         playAgainButton.setVisible(false);
 
-        // Start with first question
         showNextQuestion();
     }
 
+    /**
+     * Displays the next question or ends the quiz if none remain.
+     */
     private void showNextQuestion()
     {
-
         if (currentQuestionIndex >= quizQuestions.size())
         {
             endGame("You answered all questions.");
@@ -259,6 +275,9 @@ public class Quiz extends Application
         updateStatusLabel();
     }
 
+    /**
+     * Updates the status label to show progress and remaining time.
+     */
     private void updateStatusLabel()
     {
         if (quizQuestions.isEmpty())
@@ -267,26 +286,31 @@ public class Quiz extends Application
             return;
         }
 
-        final int displayIndex = Math.min(currentQuestionIndex + ONE_SECOND, quizQuestions.size());
+        final int displayIndex =
+                Math.min(currentQuestionIndex + ONE_SECOND, quizQuestions.size());
+
         statusLabel.setText(
                 displayIndex + "/" + quizQuestions.size()
                         + " ::: " + remainingSeconds + "s remaining"
         );
     }
 
+    /**
+     * Ends the game, stops the timer, and displays the final score.
+     *
+     * @param reason explanation for ending (e.g., time expired)
+     */
     private void endGame(final String reason)
     {
-
         if (timeline != null)
         {
             timeline.stop();
         }
-        
+
         submitButton.setDisable(true);
         answerField.setDisable(true);
-        current = null; // mark game as ended
+        current = null;
 
-        // Final score on screen
         final String finalScore =
                 reason + "\n\nFinal score:"
                         + "\nCorrect: " + correctCount
@@ -294,17 +318,19 @@ public class Quiz extends Application
 
         feedbackLabel.setText(finalScore);
 
-        // Clear question + status, show restart UI
         questionLabel.setText("Game over.");
         statusLabel.setText("");
 
-        // Show "Play again" button
         playAgainButton.setVisible(true);
         playAgainButton.setDisable(false);
-
         startButton.setVisible(false);
     }
 
+    /**
+     * Standard Java entry point. Launches the JavaFX app.
+     *
+     * @param args CLI arguments
+     */
     public static void main(final String[] args)
     {
         launch(args);
