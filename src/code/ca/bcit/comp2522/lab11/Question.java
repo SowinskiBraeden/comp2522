@@ -18,7 +18,7 @@ public class Question
 {
     private static final int MIN_ANSWERS = 1;
 
-    private final String question;
+    private final String   question;
     private final String[] answers;
 
     /**
@@ -61,7 +61,7 @@ public class Question
         }
 
         this.question = question;
-        this.answers = answers;
+        this.answers  = answers;
     }
 
     /**
