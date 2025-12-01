@@ -45,12 +45,17 @@ public class Quiz extends Application
     private static final String DELIMITER    = "\\|";
     private static final int NUM_QUESTIONS   = 10;
     private static final int START_TIME_SECS = 90;
-    private static final Path QUIZ_FILE_PATH = Paths.get("data", "quiz.txt");
 
-    private final List<Question> questions = new ArrayList<>();
-    private List<Question> quizQuestions   = new ArrayList<>();
+    private static final Path           QUIZ_FILE_PATH;
+    private static final List<Question> questions;
 
-    private Question current;
+    static {
+        questions      = new ArrayList<>();
+        QUIZ_FILE_PATH = Paths.get("data", "quiz.txt");
+    }
+
+    private Question       current;
+    private List<Question> quizQuestions;
 
     private int currentQuestionIndex;
     private int correctCount;
@@ -172,7 +177,8 @@ public class Quiz extends Application
             return;
         }
 
-        final Runnable submitAction = getRunnable();
+        final Runnable submitAction;
+        submitAction = getRunnable();
 
         submitButton.setOnAction(event -> submitAction.run());
         answerField.setOnAction(event -> submitAction.run());
@@ -312,8 +318,8 @@ public class Quiz extends Application
         displayIndex = Math.min(currentQuestionIndex + ONE_SECOND, quizQuestions.size());
 
         statusLabel.setText(
-                displayIndex + "/" + quizQuestions.size()
-                        + " ::: " + remainingSeconds + "s remaining"
+                displayIndex + "/" + quizQuestions.size() +
+                " ::: " + remainingSeconds + "s remaining"
         );
     }
 
@@ -335,9 +341,10 @@ public class Quiz extends Application
 
         final String finalScore;
 
-        finalScore = reason + "\n\nFinal score:"
-                            + "\nCorrect: " + correctCount
-                            + "\nWrong:   " + wrongCount;
+        finalScore = reason +
+                     "\n\nFinal score:" +
+                     "\nCorrect: " + correctCount +
+                     "\nWrong:   " + wrongCount;
 
         feedbackLabel.setText(finalScore);
 
