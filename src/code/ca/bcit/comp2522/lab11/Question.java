@@ -84,6 +84,20 @@ public class Question
         return this.answers;
     }
 
+    public String getAnswersString()
+    {
+        final StringBuilder sb;
+        sb = new StringBuilder();
+
+        for (final String answer : this.answers)
+        {
+            sb.append(answer);
+            sb.append(", ");
+        }
+
+        return sb.toString();
+    }
+
     /**
      * Checks whether a user's answer is correct.
      * Matching is case-insensitive.

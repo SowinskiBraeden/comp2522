@@ -8,6 +8,7 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.Button;
 import javafx.util.Duration;
 
@@ -35,42 +36,45 @@ import java.util.List;
  */
 public class Quiz extends Application
 {
-    private static final int WIDTH           = 800;
-    private static final int HEIGHT          = 600;
-    private static final int QUESTION_SPLIT  = 0;
+    private static final int WIDTH_PIXELS = 800;
+    private static final int HEIGHT_PIXELS = 600;
+    private static final int QUESTION_SPLIT_INDEX = 0;
     private static final int COUNTER_STARTER = 0;
-    private static final int ANSWER_SPLIT    = 1;
-    private static final int ONE_SECOND      = 1;
-    private static final int MIN_LENGTH      = 2;
-    private static final String DELIMITER    = "\\|";
-    private static final int NUM_QUESTIONS   = 10;
-    private static final int START_TIME_SECS = 90;
+    private static final int ANSWER_SPLIT_INDEX = 1;
+    private static final int SECOND = 1;
+    private static final int MIN_CHAR_LENGTH = 2;
+    private static final String QUESTION_DELIMITER = "\\|";
+    private static final int NUM_QUESTIONS = 10;
+    private static final int START_TIME_SECONDS = 90;
+    private static final int INDEX_OFFSET = 1;
 
-    private static final Path           QUIZ_FILE_PATH;
+    private static final Path QUIZ_FILE_PATH;
     private static final List<Question> questions;
 
-    static {
-        questions      = new ArrayList<>();
+    static
+    {
+        questions = new ArrayList<>();
         QUIZ_FILE_PATH = Paths.get("data", "quiz.txt");
     }
 
-    private Question       current;
+    private Question current;
     private List<Question> quizQuestions;
 
     private int currentQuestionIndex;
     private int correctCount;
     private int wrongCount;
     private int remainingSeconds;
+    private List<Question> wrongQuestions;
 
     private Timeline timeline;
 
-    private Label     questionLabel;
-    private Label     feedbackLabel;
-    private Label     statusLabel;
+    private Label questionLabel;
+    private Label feedbackLabel;
+    private Label statusLabel;
     private TextField answerField;
-    private Button    submitButton;
-    private Button    startButton;
-    private Button    playAgainButton;
+    private Button submitButton;
+    private Button startButton;
+    private Button playAgainButton;
 
     /**
      * Reads and loads quiz questions from a file.
@@ -93,8 +97,8 @@ public class Quiz extends Application
             while ((line = reader.readLine()) != null)
             {
                 final String[] parts;
-                parts = line.split(DELIMITER);
-                if (parts.length < MIN_LENGTH)
+                parts = line.split(QUESTION_DELIMITER);
+                if (parts.length < MIN_CHAR_LENGTH)
                 {
                     continue;
                 }
@@ -102,20 +106,18 @@ public class Quiz extends Application
                 final String questionText;
                 final String[] answers;
 
-                questionText = parts[QUESTION_SPLIT];
-                answers      = parts[ANSWER_SPLIT].split(",");
+                questionText = parts[QUESTION_SPLIT_INDEX];
+                answers = parts[ANSWER_SPLIT_INDEX].split(",");
 
                 questions.add(new Question(
                         questionText,
                         answers
                 ));
             }
-        }
-        catch (final FileNotFoundException e)
+        } catch (final FileNotFoundException e)
         {
             System.out.println("Unable to open file: " + path);
-        }
-        catch (final IOException e)
+        } catch (final IOException e)
         {
             System.out.println("Error reading file: " + path);
         }
@@ -131,17 +133,17 @@ public class Quiz extends Application
     {
         final VBox root;
         root = new VBox();
-        root.setPrefSize(WIDTH, HEIGHT);
+        root.setPrefSize(WIDTH_PIXELS, HEIGHT_PIXELS);
 
         questionLabel = new Label("Click \"Start quiz\" to begin.");
         feedbackLabel = new Label();
-        statusLabel   = new Label();
+        statusLabel = new Label();
 
         answerField = new TextField();
         answerField.setPromptText("Type your answer here");
 
-        submitButton    = new Button("Submit");
-        startButton     = new Button("Start quiz");
+        submitButton = new Button("Submit");
+        startButton = new Button("Start quiz");
         playAgainButton = new Button("Play again");
 
         answerField.setDisable(true);
@@ -150,20 +152,20 @@ public class Quiz extends Application
         playAgainButton.setVisible(false);
 
         root.getChildren().addAll(
-            questionLabel,
-            answerField,
-            submitButton,
-            feedbackLabel,
-            statusLabel,
-            startButton,
-            playAgainButton
+                questionLabel,
+                answerField,
+                submitButton,
+                feedbackLabel,
+                statusLabel,
+                startButton,
+                playAgainButton
         );
 
         final Scene scene;
         scene = new Scene(root);
 
         scene.getStylesheets().add(
-            getClass().getResource("style.css").toExternalForm()
+                getClass().getResource("style.css").toExternalForm()
         );
 
         readQuestions(QUIZ_FILE_PATH);
@@ -193,13 +195,15 @@ public class Quiz extends Application
     /**
      * getRunnable creates a Runnable
      * lambda that is used to enter an answer on button click.
+     *
      * @return Runnable to manage answer
      */
     private Runnable getRunnable()
     {
         final Runnable submitAction;
 
-        submitAction = () -> {
+        submitAction = () ->
+        {
             if (current == null)
             {
                 return;
@@ -220,10 +224,10 @@ public class Quiz extends Application
             if (current.validateAnswer(cleaned))
             {
                 correctCount++;
-            }
-            else
+            } else
             {
                 wrongCount++;
+                this.wrongQuestions.add(current);
             }
 
             currentQuestionIndex++;
@@ -239,15 +243,18 @@ public class Quiz extends Application
      */
     private void startGame()
     {
-        correctCount         = COUNTER_STARTER;
-        wrongCount           = COUNTER_STARTER;
-        remainingSeconds     = START_TIME_SECS;
+        ((VBox) feedbackLabel.getParent()).getChildren().removeIf(node -> node instanceof TextArea);
+
+        correctCount = COUNTER_STARTER;
+        wrongCount = COUNTER_STARTER;
+        remainingSeconds = START_TIME_SECONDS;
         currentQuestionIndex = COUNTER_STARTER;
 
         feedbackLabel.setText("");
         questionLabel.setText("");
 
-        quizQuestions = new ArrayList<>(questions);
+        wrongQuestions = new ArrayList<>();
+        quizQuestions  = new ArrayList<>(questions);
         Collections.shuffle(quizQuestions);
 
         if (quizQuestions.size() > NUM_QUESTIONS)
@@ -261,15 +268,16 @@ public class Quiz extends Application
         }
 
         timeline = new Timeline(
-            new KeyFrame(Duration.seconds(ONE_SECOND), event -> {
-                remainingSeconds--;
-                updateStatusLabel();
-
-                if (remainingSeconds <= COUNTER_STARTER)
+                new KeyFrame(Duration.seconds(SECOND), event ->
                 {
-                    endGame("Time's up!");
-                }
-            })
+                    remainingSeconds--;
+                    updateStatusLabel();
+
+                    if (remainingSeconds <= COUNTER_STARTER)
+                    {
+                        endGame("Time's up!");
+                    }
+                })
         );
         timeline.setCycleCount(Timeline.INDEFINITE);
         timeline.play();
@@ -315,7 +323,7 @@ public class Quiz extends Application
         }
 
         final int displayIndex;
-        displayIndex = Math.min(currentQuestionIndex + ONE_SECOND, quizQuestions.size());
+        displayIndex = Math.min(currentQuestionIndex + SECOND, quizQuestions.size());
 
         statusLabel.setText(
                 displayIndex + "/" + quizQuestions.size() +
@@ -339,12 +347,49 @@ public class Quiz extends Application
         answerField.setDisable(true);
         current = null;
 
-        final String finalScore;
+        final String   finalScore;
+        final TextArea solutions;
+
+        if (wrongCount > COUNTER_STARTER)
+        {
+            final StringBuilder allSolutions;
+
+            allSolutions = new StringBuilder();
+
+            for (final Question question : wrongQuestions)
+            {
+                final StringBuilder solution;
+                solution = new StringBuilder();
+
+                solution.append("Question: ");
+                solution.append(question.getQuestion());
+                solution.append("\n");
+                solution.append("Answer: ");
+                solution.append(question.getAnswersString());
+                solution.append("\n\n");
+
+                allSolutions.append(solution.toString());
+            }
+
+            solutions = new TextArea(allSolutions.toString());
+            solutions.setEditable(false);
+        }
+        else
+        {
+            solutions = null;
+        }
 
         finalScore = reason +
                      "\n\nFinal score:" +
                      "\nCorrect: " + correctCount +
                      "\nWrong:   " + wrongCount;
+
+        if (solutions != null)
+        {
+            final VBox root;
+            root = (VBox) feedbackLabel.getParent();
+            root.getChildren().add(root.getChildren().indexOf(feedbackLabel) + INDEX_OFFSET, solutions);
+        }
 
         feedbackLabel.setText(finalScore);
 
