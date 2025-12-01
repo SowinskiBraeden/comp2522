@@ -55,3 +55,46 @@ Who won the 2022 World Championship?|Max Verstappen
 Which driver has the most career race starts?|Fernando Alonso
 What does VSC stand for?|Virtual Safety Car
 Who is the most successful British F1 driver in terms of wins?|Lewis Hamilton
+What planet is closest to the sun?|Mercury
+What is the longest bone in the human body?|Femur
+Which ocean lies on the east coast of the USA?|Atlantic
+Which organ helps you breathe?|Lungs
+Who invented the telephone?|Alexander Graham Bell
+What is the capital of Spain?|Madrid
+What number comes after 999?|1000
+Which fruit is yellow and curved?|Banana
+What is a baby dog called?|Puppy
+What is the largest country in the world by area?|Russia
+What is the main language spoken in China?|Mandarin
+What instrument has six strings?|Guitar
+What is the hottest planet in the solar system?|Venus
+What natural satellite orbits Earth?|Moon
+What is the capital of Australia?|Canberra
+What gas do humans need to breathe?|Oxygen
+How many minutes are in an hour?|60
+What do cows drink?|Water
+Which continent is Egypt part of?|Africa
+What is 10 × 10?|100
+Who wrote “Harry Potter”?|J.K. Rowling
+What food do pandas primarily eat?|Bamboo
+What is the capital of Germany?|Berlin
+How many colors are in a rainbow?|7
+What is the largest bird?|Ostrich
+What machine measures temperature?|Thermometer
+What is the capital of Russia?|Moscow
+Which animal is known for laughing?|Hyena
+What planet is known for its big red spot?|Jupiter
+What is the main ingredient in sushi?|Rice
+Who painted The Starry Night?|Vincent van Gogh
+Which country invented pizza?|Italy
+What is the capital of Mexico?|Mexico City
+How many letters are in the English alphabet?|26
+What is the biggest internal organ?|Liver
+What animal is the symbol of Canada?|Beaver
+What is the process of water turning into vapor?|Evaporation
+What is the capital of South Korea?|Seoul
+Which bird cannot fly?|Penguin
+What is the name of Earth’s largest continent?|Asia
+How many sides does a square have?|4
+Who was the first president of the United States?|George Washington
+What part of the plant is typically green?|Leaf
