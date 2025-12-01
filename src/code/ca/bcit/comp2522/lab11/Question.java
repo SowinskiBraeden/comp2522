@@ -49,7 +49,7 @@ public class Question
     {
         for (final String answer : this.answers)
         {
-            if (answer.equals(userAnswer))
+            if (answer.equalsIgnoreCase(userAnswer))
             {
                 return true;
             }
